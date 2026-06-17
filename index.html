@@ -6,17 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Поїздки до Греції по святих місцях | Паломницький тур</title>
     <meta name="description"
-        content="Комфортні паломницькі поїздки до Греції через Румунію та Болгарію на Renault Master. Дати поїздок, вільні місця та контакт водія для бронювання.">
+        content="Комфортні паломницькі поїздки до святих місць Греції. Маршрут через Румунію та Болгарію на Renault Master. Дати, ціна та бронювання.">
     <meta name="keywords"
-        content="поїздка до Греції, святі місця Греції, паломницька поїздка, маршрут через Румунію і Болгарію, Renault Master, монастирі Греції">
+        content="поїздки до Греції, святі місця Греції, паломницька поїздка, маршрут через Румунію та Болгарію, Renault Master, поїздки до монастирів Греції">
     <meta name="theme-color" content="#005b9f">
-    <link rel="canonical" href="https://greece-travel.example.com">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="canonical" href="https://greecetravel.vercel.app/">
 
     <!-- Open Graph for Telegram, Facebook, Viber -->
-    <meta property="og:title" content="Паломницькі поїздки до Греції">
-    <meta property="og:description" content="Організовані поїздки до святих місць невеликими групами. Комфортний Renault Master.">
+    <meta property="og:title" content="Паломницькі поїздки до Греції на Renault Master">
+    <meta property="og:description" content="Організовані поїздки до святих місць невеликими групами. Маршрут: Україна → Румунія → Болгарія → Греція.">
     <meta property="og:type" content="website">
-    <meta property="og:image" content="assets/car-original.png">
+    <meta property="og:url" content="https://greecetravel.vercel.app/">
+    <meta property="og:image" content="https://greecetravel.vercel.app/assets/og-image.jpg">
+    <meta name="twitter:card" content="summary_large_image">
 
     <!-- Security Headers via Meta -->
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
@@ -58,19 +61,29 @@
     <!-- 1. Hero Section -->
     <section class="hero greek-pattern" id="home">
         <div class="container hero-content">
-            <div class="hero-badges">
-                <span class="badge" id="hero-badge-transport">Renault Master</span>
-                <span class="badge">Через Румунію та Болгарію</span>
-                <span class="badge badge-accent">Найближча: <span id="hero-date"></span></span>
-                <span class="badge badge-outline">Місць: <span id="hero-seats"></span></span>
+            <div class="hero-text-side">
+                <h1>Поїздки до Греції по святих місцях</h1>
+                <div class="hero-badges">
+                    <span class="badge" id="hero-badge-transport">Renault Master</span>
+                    <span class="badge">Через Румунію та Болгарію</span>
+                    <span class="badge badge-accent">Найближча: <span id="hero-date">21 червня 2026</span></span>
+                    <span class="badge badge-outline">Місць: <span id="hero-seats">4</span> з <span id="hero-seats-total">8</span></span>
+                    <span class="badge">Виїзд: Чернівці</span>
+                </div>
+                <p class="subtitle">Комфортна паломницька поїздка через Румунію та Болгарію на <span id="hero-transport-text">Renault Master</span></p>
+                <p class="description">Організовані поїздки невеликими групами до духовних місць Греції. Зручний маршрут, комфортний транспорт і можливість швидко зв'язатися з водієм для бронювання місця.</p>
+                <div class="hero-actions">
+                    <a href="#route" class="btn btn-outline btn-lg">Переглянути маршрут</a>
+                    <a href="#contacts" class="btn btn-primary btn-lg">Зв'язатися з водієм</a>
+                </div>
             </div>
-            <h1>Поїздки до Греції по святих місцях</h1>
-            <p class="subtitle">Комфортна паломницька поїздка через Румунію та Болгарію на <span id="hero-transport-text">Renault Master</span></p>
-            <p class="description">Організовані поїздки невеликими групами до духовних місць Греції. Зручний маршрут,
-                комфортний транспорт і можливість швидко зв'язатися з водієм для бронювання місця.</p>
-            <div class="hero-actions">
-                <a href="#route" class="btn btn-outline btn-lg">Переглянути маршрут</a>
-                <a href="#contacts" class="btn btn-primary btn-lg">Зв'язатися з водієм</a>
+            <div class="hero-image-side">
+                <div class="hero-image-card">
+                    <picture>
+                        <source srcset="assets/car-bg-removed.webp" type="image/webp">
+                        <img src="assets/car-bg-removed.png" alt="Renault Master для паломницьких поїздок" width="600" height="400" fetchpriority="high">
+                    </picture>
+                </div>
             </div>
         </div>
     </section>
@@ -196,49 +209,26 @@
             <h2 class="text-center">Святі місця</h2>
             <p class="section-description text-center mx-auto">Учасники поїздки матимуть можливість відвідати монастирі,
                 храми, святині та духовні місця Греції.</p>
-            <div class="grid-cards scrollable-cards">
-                <div class="card">
-                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--primary-color)"
-                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                        <path d="m12 2 8 4-8 4-8-4Z" />
-                        <path d="M20 10v6a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-6" />
-                    </svg>
-                    <h3>Монастирі</h3>
+                <div class="card card-with-image">
+                    <div class="image-placeholder">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 2 8 4-8 4-8-4Z" /><path d="M20 10v6a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-6" /></svg>
+                        <span>Фото монастиря</span>
+                    </div>
+                    <h3>Монастирі Греції</h3>
                 </div>
-                <div class="card">
-                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--primary-color)"
-                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                        <path d="m2 12 10-9 10 9" />
-                        <path d="M12 3v18" />
-                        <path d="M9 12h6" />
-                    </svg>
+                <div class="card card-with-image">
+                    <div class="image-placeholder">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m2 12 10-9 10 9" /><path d="M12 3v18" /><path d="M9 12h6" /></svg>
+                        <span>Фото храму</span>
+                    </div>
                     <h3>Храми</h3>
                 </div>
-                <div class="card">
-                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--primary-color)"
-                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                        <circle cx="12" cy="12" r="10" />
-                        <path d="M12 8v8" />
-                        <path d="M8 12h8" />
-                    </svg>
-                    <h3>Святині</h3>
-                </div>
-                <div class="card">
-                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--primary-color)"
-                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                        <path
-                            d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
-                    </svg>
-                    <h3>Місця для молитви</h3>
-                </div>
-                <div class="card">
-                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--primary-color)"
-                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                        <path
-                            d="M14.1 6.1a2 2 0 0 0-2.8 0l-7.2 7.2a2 2 0 0 0 0 2.8l2.8 2.8a2 2 0 0 0 2.8 0l7.2-7.2a2 2 0 0 0 0-2.8l-2.8-2.8Z" />
-                        <path d="m15 5 4 4" />
-                    </svg>
-                    <h3>Духовні екскурсії</h3>
+                <div class="card card-with-image">
+                    <div class="image-placeholder">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10" /><path d="M12 8v8" /><path d="M8 12h8" /></svg>
+                        <span>Фото святині</span>
+                    </div>
+                    <h3>Святині та місця для молитви</h3>
                 </div>
             </div>
         </div>
@@ -252,19 +242,19 @@
                 <div class="trip-details">
                     <div class="detail-item">
                         <span class="detail-label">Дата:</span>
-                        <span class="detail-value" id="trip-date"></span>
+                        <span class="detail-value" id="trip-date">21 червня 2026</span>
                     </div>
                     <div class="detail-item">
                         <span class="detail-label">Вільних місць:</span>
-                        <span class="detail-value"><span id="trip-seats"></span> з <span id="trip-seats-total"></span></span>
+                        <span class="detail-value"><span id="trip-seats">4</span> з <span id="trip-seats-total">8</span></span>
                     </div>
                     <div class="detail-item">
                         <span class="detail-label">Транспорт:</span>
-                        <span class="detail-value" id="trip-transport"></span>
+                        <span class="detail-value" id="trip-transport">Renault Master</span>
                     </div>
                     <div class="detail-item">
                         <span class="detail-label">Маршрут:</span>
-                        <span class="detail-value" id="trip-route"></span>
+                        <span class="detail-value" id="trip-route">Україна → Румунія → Болгарія → Греція</span>
                     </div>
                 </div>
                 <p class="mt-4 text-small" style="opacity: 0.9;">* Дату, маршрут і кількість місць уточнюйте у водія.</p>
@@ -311,8 +301,21 @@
                         </li>
                     </ul>
                 </div>
-                <div class="transport-image">
-                    <img src="assets/car-bg-removed.png" alt="Мікроавтобус Renault Master для паломницької поїздки" width="600" height="400" loading="lazy">
+                <div class="transport-image-group">
+                    <picture>
+                        <source srcset="assets/car-bg-removed.webp" type="image/webp">
+                        <img src="assets/car-bg-removed.png" alt="Мікроавтобус Renault Master для паломницької поїздки" width="600" height="400" loading="lazy" class="main-transport-img">
+                    </picture>
+                    <div class="transport-gallery">
+                        <div class="image-placeholder small-placeholder">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
+                            <span>Фото салону буде додано</span>
+                        </div>
+                        <div class="image-placeholder small-placeholder">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 16V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v10"></path><path d="M4 16h16"></path><path d="M12 12v4"></path><path d="M10 22h4"></path></svg>
+                            <span>Фото багажного відділення буде додано</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -335,23 +338,89 @@
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
                         Орієнтовна тривалість
                     </h4>
-                    <p id="info-duration">Близько 24-30 годин</p>
+                    <p id="info-duration">24–30 годин</p>
                 </div>
                 <div class="info-card">
                     <h4>
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
                         Документи
                     </h4>
-                    <p>Дійсний біометричний закордонний паспорт.</p>
+                    <p>Потрібен біометричний закордонний паспорт.</p>
                 </div>
                 <div class="info-card">
                     <h4>
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 8h1a4 4 0 0 1 0 8h-1"></path><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path><line x1="6" y1="1" x2="6" y2="4"></line><line x1="10" y1="1" x2="10" y2="4"></line><line x1="14" y1="1" x2="14" y2="4"></line></svg>
-                        Зупинки
+                        Зупинки та відпочинок
                     </h4>
-                    <p>Регулярні зупинки для відпочинку по маршруту.</p>
+                    <p>Регулярні зупинки в дорозі для вашого комфорту.</p>
+                </div>
+                <div class="info-card">
+                    <h4>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+                        Вартість
+                    </h4>
+                    <p id="info-price">Уточнюйте у водія</p>
+                </div>
+                <div class="info-card">
+                    <h4>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                        Бронювання
+                    </h4>
+                    <p>Дату і кількість вільних місць уточнюйте перед бронюванням.</p>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <!-- NEW: What to Take Section -->
+    <section class="what-to-take" id="what-to-take">
+        <div class="container">
+            <h2 class="text-center">Що взяти з собою</h2>
+            <div class="packing-list-container">
+                <ul class="packing-list">
+                    <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--primary-color)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg> Закордонний біометричний паспорт</li>
+                    <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--primary-color)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg> Зручний одяг для довгої дороги</li>
+                    <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--primary-color)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg> Питну воду</li>
+                    <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--primary-color)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg> Особисті речі</li>
+                    <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--primary-color)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg> Ліки за потреби</li>
+                    <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--primary-color)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg> Зарядний пристрій для телефону</li>
+                    <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--primary-color)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg> Готівку на особисті витрати</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW: Included/Excluded Section -->
+    <section class="included bg-light" id="included">
+        <div class="container">
+            <h2 class="text-center">Що входить у поїздку</h2>
+            <div class="included-grid">
+                <div class="included-card">
+                    <div class="included-header success">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                        <h3>Входить</h3>
+                    </div>
+                    <ul class="check-list">
+                        <li>Місце в мікроавтобусі Renault Master</li>
+                        <li>Дорога за вказаним маршрутом</li>
+                        <li>Регулярні зупинки по дорозі</li>
+                        <li>Зв'язок з водієм протягом поїздки</li>
+                    </ul>
+                </div>
+                <div class="included-card">
+                    <div class="included-header danger">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="15" y1="9" x2="9" y2="15"></line><line x1="9" y1="9" x2="15" y2="15"></line></svg>
+                        <h3>Не входить</h3>
+                    </div>
+                    <ul class="cross-list">
+                        <li>Особисті витрати</li>
+                        <li>Харчування</li>
+                        <li>Додаткові платні екскурсії</li>
+                        <li>Медичне страхування (уточнюйте додатково)</li>
+                    </ul>
+                </div>
+            </div>
+            <p class="text-center mt-4 text-small" style="opacity: 0.8;">Деталі щодо ціни та послуг уточнюйте у водія під час бронювання.</p>
         </div>
     </section>
 
@@ -415,47 +484,47 @@
                 </div>
                 <div class="faq-item">
                     <button class="faq-question" aria-expanded="false">
-                        <span>Звідки виїзд?</span>
+                        <span>Скільки коштує поїздка?</span>
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
                     </button>
                     <div class="faq-answer">
-                        <p>Основне місто виїзду — <span id="faq-city">Чернівці</span>. Можлива підсадка пасажирів по маршруту. Деталі уточнюйте у водія.</p>
+                        <p>Точну ціну поїздки ви можете дізнатися, зателефонувавши водієві, оскільки вона може залежати від місця вашої посадки.</p>
                     </div>
                 </div>
                 <div class="faq-item">
                     <button class="faq-question" aria-expanded="false">
-                        <span>Через які країни проходить маршрут?</span>
+                        <span>Чи потрібна передоплата?</span>
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
                     </button>
                     <div class="faq-answer">
-                        <p>Маршрут проходить через Україну, Румунію та Болгарію до Греції.</p>
+                        <p>Деталі щодо передоплати та повного розрахунку обговорюються індивідуально з водієм під час бронювання місця.</p>
                     </div>
                 </div>
                 <div class="faq-item">
                     <button class="faq-question" aria-expanded="false">
-                        <span>Який транспорт?</span>
+                        <span>Де точне місце виїзду?</span>
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
                     </button>
                     <div class="faq-answer">
-                        <p>Поїздка здійснюється на комфортному мікроавтобусі <span id="faq-transport">Renault Master</span>.</p>
+                        <p>Основне місто виїзду — <span id="faq-city">Чернівці</span>. Точна адреса збору групи узгоджується напередодні поїздки.</p>
                     </div>
                 </div>
                 <div class="faq-item">
                     <button class="faq-question" aria-expanded="false">
-                        <span>Скільки місць у поїздці?</span>
+                        <span>Чи можна підсісти по маршруту?</span>
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
                     </button>
                     <div class="faq-answer">
-                        <p>Група невелика — до <span id="faq-seats">8</span> осіб.</p>
+                        <p>Так, можлива підсадка пасажирів по маршруту. Попередьте про це водія заздалегідь.</p>
                     </div>
                 </div>
                 <div class="faq-item">
                     <button class="faq-question" aria-expanded="false">
-                        <span>Чи можна їхати старшим людям?</span>
+                        <span>Скільки триває дорога?</span>
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
                     </button>
                     <div class="faq-answer">
-                        <p>Так, поїздка організована так, щоб бути максимально комфортною для людей будь-якого віку. Робляться регулярні зупинки.</p>
+                        <p>Орієнтовна тривалість поїздки становить 24–30 годин, залежно від черг на кордонах.</p>
                     </div>
                 </div>
                 <div class="faq-item">
@@ -469,11 +538,20 @@
                 </div>
                 <div class="faq-item">
                     <button class="faq-question" aria-expanded="false">
-                        <span>Як дізнатися точну ціну?</span>
+                        <span>Чи підходить поїздка старшим людям?</span>
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
                     </button>
                     <div class="faq-answer">
-                        <p>Точну ціну поїздки, враховуючи ваші побажання та місце посадки, ви можете дізнатися, зателефонувавши водієві.</p>
+                        <p>Так, поїздка організована максимально комфортно. Транспорт зручний, і водій робить регулярні зупинки для відпочинку.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>Що робити, якщо плани змінилися?</span>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Будь ласка, повідомте водія якнайшвидше, щоб ваше місце могли зайняти інші люди, які хочуть поїхати.</p>
                     </div>
                 </div>
             </div>

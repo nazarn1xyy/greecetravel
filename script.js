@@ -21,6 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Hero & General
         updateElementText('hero-date', siteConfig.tripDate);
         updateElementText('hero-seats', siteConfig.seatsAvailable);
+        updateElementText('hero-seats-total', siteConfig.seatsTotal);
         updateElementText('hero-transport-text', siteConfig.transport);
         
         // Benefits & About
@@ -41,6 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Important Info
         updateElementText('info-city', siteConfig.departureCity);
         updateElementText('info-duration', siteConfig.estimatedDuration);
+        updateElementText('info-price', siteConfig.price);
 
         // FAQ
         updateElementText('faq-city', siteConfig.departureCity);
@@ -52,20 +54,26 @@ document.addEventListener('DOMContentLoaded', () => {
         updateElementText('contact-phone-display', siteConfig.phoneDisplay);
         updateElementText('contact-time', siteConfig.callTime);
 
-        // Contact Links
+        // Contact Links (Hide if empty)
         updateElementLink('contact-phone-display', siteConfig.phoneLink, 'tel:');
         updateElementLink('btn-phone', siteConfig.phoneLink, 'tel:');
         updateElementLink('btn-viber', siteConfig.viberLink);
         updateElementLink('btn-tg', siteConfig.telegramLink);
         updateElementLink('btn-wa', siteConfig.whatsappLink);
 
-        // Mobile Sheet Links
+        // Mobile Sheet Links (Hide if empty)
         updateElementLink('sheet-btn-viber', siteConfig.viberLink);
         updateElementLink('sheet-btn-tg', siteConfig.telegramLink);
         updateElementLink('sheet-btn-wa', siteConfig.whatsappLink);
 
         // Mobile Bar Links
         updateElementLink('mobile-btn-phone', siteConfig.phoneLink, 'tel:');
+        
+        // If all messengers are empty, hide the "Write" button
+        if (!siteConfig.viberLink && !siteConfig.telegramLink && !siteConfig.whatsappLink) {
+            const btnWrite = document.getElementById('mobile-btn-write');
+            if (btnWrite) btnWrite.style.display = 'none';
+        }
     }
 
     // ==========================================

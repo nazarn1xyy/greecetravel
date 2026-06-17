@@ -318,8 +318,20 @@ h4 {
 */
 .hero {
     padding: 60px 0 64px;
-    text-align: center;
     background: linear-gradient(to bottom, var(--bg-color), var(--secondary-color));
+}
+
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.hero-text-side {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
 }
 
 .hero-badges {
@@ -348,7 +360,24 @@ h4 {
     display: flex;
     flex-direction: column;
     gap: 16px;
+    width: 100%;
+}
+
+.hero-image-card {
+    background: white;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    padding: 24px;
+    display: flex;
     justify-content: center;
+    align-items: center;
+    border: 1px solid var(--border-color);
+}
+
+.hero-image-card img {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
 }
 
 /* 
@@ -1055,8 +1084,36 @@ h4 {
     h2 { font-size: 2.5rem; margin-bottom: 48px; }
     
     .hero { padding: 100px 0; }
+    
+    .hero-content {
+        flex-direction: row;
+        align-items: center;
+        text-align: left;
+        gap: 64px;
+    }
+    
+    .hero-text-side {
+        flex: 1;
+        align-items: flex-start;
+        text-align: left;
+    }
+    
+    .hero-badges {
+        justify-content: flex-start;
+    }
+    
+    .hero .description {
+        margin: 0 0 40px;
+    }
+    
+    .hero-image-side {
+        flex: 1;
+    }
+    
     .hero-actions {
         flex-direction: row;
+        justify-content: flex-start;
+        width: auto;
     }
     
     .main-nav { display: flex; transform: none; position: static; box-shadow: none; background: transparent; padding: 0; flex-direction: row; }
@@ -1069,19 +1126,6 @@ h4 {
     @supports (display: grid) {
         .grid-cards {
             justify-content: center;
-        }
-        /* Make last 2 items center nicely if there are 5 */
-        .holy-places .grid-cards > div:nth-child(4) {
-            grid-column: 1 / 3;
-            justify-self: end;
-            width: 100%;
-            max-width: 380px;
-        }
-        .holy-places .grid-cards > div:nth-child(5) {
-            grid-column: 2 / 4;
-            justify-self: start;
-            width: 100%;
-            max-width: 380px;
         }
     }
     
@@ -1136,5 +1180,199 @@ h4 {
 
     .toast {
         bottom: 32px;
+    }
+}
+
+/* 
+==================================================
+   NEW SECTIONS & PLACEHOLDERS
+================================================== 
+*/
+
+/* Image Placeholders */
+.card-with-image {
+    padding: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-with-image h3 {
+    padding: 24px;
+    margin: 0;
+    text-align: center;
+}
+
+.image-placeholder {
+    background: var(--secondary-color);
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary-color);
+    opacity: 0.8;
+    gap: 12px;
+}
+
+.image-placeholder svg {
+    opacity: 0.5;
+}
+
+.image-placeholder span {
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+/* Transport Image Group */
+.transport-image-group {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    flex: 1;
+}
+
+.main-transport-img {
+    width: 100%;
+    height: auto;
+    background: white;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border-color);
+    padding: 16px;
+}
+
+.transport-gallery {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.small-placeholder {
+    height: 120px;
+    border-radius: var(--radius-md);
+    background: white;
+    border: 1px dashed var(--border-color);
+    color: var(--text-muted);
+}
+
+.small-placeholder svg {
+    color: var(--text-muted);
+}
+
+/* Packing List */
+.packing-list-container {
+    background: white;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--border-color);
+    padding: 32px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.packing-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+}
+
+.packing-list li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-weight: 500;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.packing-list li:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+/* Included / Excluded */
+.included-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.included-card {
+    background: white;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--border-color);
+    overflow: hidden;
+}
+
+.included-header {
+    padding: 24px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: white;
+}
+
+.included-header.success {
+    background: #10b981;
+}
+
+.included-header.danger {
+    background: #ef4444;
+}
+
+.included-header h3 {
+    margin: 0;
+    color: white;
+}
+
+.check-list, .cross-list {
+    list-style: none;
+    padding: 24px;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.check-list li, .cross-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    position: relative;
+    padding-left: 28px;
+}
+
+.check-list li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #10b981;
+    font-weight: bold;
+}
+
+.cross-list li::before {
+    content: "✕";
+    position: absolute;
+    left: 0;
+    color: #ef4444;
+    font-weight: bold;
+}
+
+@media (min-width: 768px) {
+    .packing-list {
+        grid-template-columns: 1fr 1fr;
+    }
+    .included-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    .transport-image-group {
+        width: 50%;
     }
 }
