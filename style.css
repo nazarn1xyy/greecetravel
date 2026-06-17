@@ -1263,10 +1263,7 @@ h4 {
 .main-transport-img {
     width: 100%;
     height: auto;
-    background: white;
-    border-radius: var(--radius-lg);
-    border: 1px solid var(--border-color);
-    padding: 16px;
+    padding: 0;
 }
 
 .transport-gallery {
