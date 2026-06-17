@@ -1079,7 +1079,7 @@ h4 {
     h1 { font-size: 3.5rem; }
     h2 { font-size: 2.5rem; margin-bottom: 48px; }
     
-    .hero { padding: 100px 0; }
+    .hero { padding: 40px 0 60px; }
     
     .hero-content {
         flex-direction: row;
