@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Поїздки до Греції по святих місцях | Паломницький тур</title>
+    <meta name="description"
+        content="Комфортні паломницькі поїздки до Греції через Румунію та Болгарію на Renault Master. Дати поїздок, вільні місця та контакт водія для бронювання.">
+    <meta name="keywords"
+        content="поїздка до Греції, святі місця Греції, паломницька поїздка, маршрут через Румунію і Болгарію, Renault Master, монастирі Греції">
+    <meta name="theme-color" content="#005b9f">
+    <link rel="canonical" href="https://greece-travel.example.com">
+
+    <!-- Open Graph for Telegram, Facebook, Viber -->
+    <meta property="og:title" content="Паломницькі поїздки до Греції">
+    <meta property="og:description" content="Організовані поїздки до святих місць невеликими групами. Комфортний Renault Master.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="assets/car-original.png">
+
+    <!-- Security Headers via Meta -->
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Header / Navigation -->
+    <header class="header">
+        <div class="container header-container">
+            <div class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M12 2v20" />
+                    <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+                </svg>
+                <span>Поїздки до Греції</span>
+            </div>
+            <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Відкрити меню">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+            </button>
+            <nav class="main-nav" id="main-nav">
+                <a href="#about">Про поїздку</a>
+                <a href="#route">Маршрут</a>
+                <a href="#next-trip">Найближча поїздка</a>
+                <a href="#faq">FAQ</a>
+                <a href="#contacts" class="btn btn-outline btn-sm">Зв'язатися</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 1. Hero Section -->
+    <section class="hero greek-pattern" id="home">
+        <div class="container hero-content">
+            <div class="hero-badges">
+                <span class="badge" id="hero-badge-transport">Renault Master</span>
+                <span class="badge">Через Румунію та Болгарію</span>
+                <span class="badge badge-accent">Найближча: <span id="hero-date"></span></span>
+                <span class="badge badge-outline">Місць: <span id="hero-seats"></span></span>
+            </div>
+            <h1>Поїздки до Греції по святих місцях</h1>
+            <p class="subtitle">Комфортна паломницька поїздка через Румунію та Болгарію на <span id="hero-transport-text">Renault Master</span></p>
+            <p class="description">Організовані поїздки невеликими групами до духовних місць Греції. Зручний маршрут,
+                комфортний транспорт і можливість швидко зв'язатися з водієм для бронювання місця.</p>
+            <div class="hero-actions">
+                <a href="#route" class="btn btn-outline btn-lg">Переглянути маршрут</a>
+                <a href="#contacts" class="btn btn-primary btn-lg">Зв'язатися з водієм</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW: Benefits Section -->
+    <section class="benefits bg-light" id="benefits">
+        <div class="container">
+            <h2 class="text-center">Чому обирають цю поїздку</h2>
+            <div class="grid-cards">
+                <div class="card">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--primary-color)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                    <h3>Невелика група</h3>
+                    <p>Затишна і спокійна атмосфера без метушні великих автобусів.</p>
+                </div>
+                <div class="card">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--primary-color)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                    <h3>Прямий зв'язок</h3>
+                    <p>Жодних посередників. Ви домовляєтесь безпосередньо з водієм.</p>
+                </div>
+                <div class="card">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--primary-color)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                    <h3>Безпека та комфорт</h3>
+                    <p>Перевірений маршрут та надійний транспорт <span id="benefit-transport"></span>.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. About Section -->
+    <section class="about" id="about">
+        <div class="container text-center">
+            <h2>Про поїздку</h2>
+            <p class="section-description mx-auto">Паломницька поїздка до святих місць Греції. Маршрут пролягає через
+                Румунію та Болгарію. Транспорт — зручний мікроавтобус <span id="about-transport"></span>. Невелика група для тих, хто хоче
+                спокійно відвідати духовні місця без складної організації.</p>
+        </div>
+    </section>
+
+    <!-- 3. Route Section -->
+    <section class="route bg-light" id="route">
+        <div class="container">
+            <h2 class="text-center">Маршрут</h2>
+            <div class="route-steps">
+                <div class="route-step">
+                    <div class="step-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M5 12h14" />
+                            <path d="m12 5 7 7-7 7" />
+                        </svg>
+                    </div>
+                    <div class="step-content">
+                        <h3>1. Виїзд з України</h3>
+                    </div>
+                </div>
+                <div class="route-step">
+                    <div class="step-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M5 12h14" />
+                            <path d="m12 5 7 7-7 7" />
+                        </svg>
+                    </div>
+                    <div class="step-content">
+                        <h3>2. Дорога через Румунію</h3>
+                    </div>
+                </div>
+                <div class="route-step">
+                    <div class="step-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M5 12h14" />
+                            <path d="m12 5 7 7-7 7" />
+                        </svg>
+                    </div>
+                    <div class="step-content">
+                        <h3>3. Дорога через Болгарію</h3>
+                    </div>
+                </div>
+                <div class="route-step">
+                    <div class="step-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M5 12h14" />
+                            <path d="m12 5 7 7-7 7" />
+                        </svg>
+                    </div>
+                    <div class="step-content">
+                        <h3>4. Прибуття до Греції</h3>
+                    </div>
+                </div>
+                <div class="route-step">
+                    <div class="step-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M5 12h14" />
+                            <path d="m12 5 7 7-7 7" />
+                        </svg>
+                    </div>
+                    <div class="step-content">
+                        <h3>5. Відвідування святих місць</h3>
+                    </div>
+                </div>
+                <div class="route-step">
+                    <div class="step-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M5 12h14" />
+                            <path d="m12 5 7 7-7 7" />
+                        </svg>
+                    </div>
+                    <div class="step-content">
+                        <h3>6. Повернення додому</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Holy Places Section -->
+    <section class="holy-places" id="places">
+        <div class="container">
+            <h2 class="text-center">Святі місця</h2>
+            <p class="section-description text-center mx-auto">Учасники поїздки матимуть можливість відвідати монастирі,
+                храми, святині та духовні місця Греції.</p>
+            <div class="grid-cards scrollable-cards">
+                <div class="card">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--primary-color)"
+                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="m12 2 8 4-8 4-8-4Z" />
+                        <path d="M20 10v6a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-6" />
+                    </svg>
+                    <h3>Монастирі</h3>
+                </div>
+                <div class="card">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--primary-color)"
+                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="m2 12 10-9 10 9" />
+                        <path d="M12 3v18" />
+                        <path d="M9 12h6" />
+                    </svg>
+                    <h3>Храми</h3>
+                </div>
+                <div class="card">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--primary-color)"
+                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <circle cx="12" cy="12" r="10" />
+                        <path d="M12 8v8" />
+                        <path d="M8 12h8" />
+                    </svg>
+                    <h3>Святині</h3>
+                </div>
+                <div class="card">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--primary-color)"
+                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path
+                            d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
+                    </svg>
+                    <h3>Місця для молитви</h3>
+                </div>
+                <div class="card">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--primary-color)"
+                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path
+                            d="M14.1 6.1a2 2 0 0 0-2.8 0l-7.2 7.2a2 2 0 0 0 0 2.8l2.8 2.8a2 2 0 0 0 2.8 0l7.2-7.2a2 2 0 0 0 0-2.8l-2.8-2.8Z" />
+                        <path d="m15 5 4 4" />
+                    </svg>
+                    <h3>Духовні екскурсії</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Next Trip Section -->
+    <section class="next-trip bg-light" id="next-trip">
+        <div class="container">
+            <div class="next-trip-card greek-pattern">
+                <h2>Найближча поїздка</h2>
+                <div class="trip-details">
+                    <div class="detail-item">
+                        <span class="detail-label">Дата:</span>
+                        <span class="detail-value" id="trip-date"></span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Вільних місць:</span>
+                        <span class="detail-value"><span id="trip-seats"></span> з <span id="trip-seats-total"></span></span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Транспорт:</span>
+                        <span class="detail-value" id="trip-transport"></span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Маршрут:</span>
+                        <span class="detail-value" id="trip-route"></span>
+                    </div>
+                </div>
+                <p class="mt-4 text-small" style="opacity: 0.9;">* Дату, маршрут і кількість місць уточнюйте у водія.</p>
+                <a href="#contacts" class="btn btn-primary btn-lg btn-block mt-4 btn-pulse" style="background-color: white; color: var(--primary-color);">Забронювати місце</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. Transport Section -->
+    <section class="transport" id="transport">
+        <div class="container">
+            <h2 class="text-center">Транспорт</h2>
+            <div class="transport-content">
+                <div class="transport-text">
+                    <p>Поїздка проходить на комфортному мікроавтобусі <strong id="transport-name">Renault Master</strong>.</p>
+                    <ul class="features-list">
+                        <li>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--primary-color)"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <path d="M20 6 9 17l-5-5" />
+                            </svg>
+                            Зручний мікроавтобус для довгої дороги
+                        </li>
+                        <li>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--primary-color)"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <path d="M20 6 9 17l-5-5" />
+                            </svg>
+                            Достатньо місця для особистих речей
+                        </li>
+                        <li>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--primary-color)"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <path d="M20 6 9 17l-5-5" />
+                            </svg>
+                            Невелика кількість пасажирів (до <span id="transport-seats">8</span> осіб)
+                        </li>
+                        <li>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--primary-color)"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <path d="M20 6 9 17l-5-5" />
+                            </svg>
+                            Спокійна та організована атмосфера
+                        </li>
+                    </ul>
+                </div>
+                <div class="transport-image">
+                    <img src="assets/car-bg-removed.png" alt="Мікроавтобус Renault Master для паломницької поїздки" width="600" height="400" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW: Important Info Section -->
+    <section class="important-info bg-light">
+        <div class="container">
+            <h2 class="text-center">Важлива інформація</h2>
+            <div class="info-grid">
+                <div class="info-card">
+                    <h4>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                        Місто виїзду
+                    </h4>
+                    <p id="info-city">Чернівці</p>
+                </div>
+                <div class="info-card">
+                    <h4>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                        Орієнтовна тривалість
+                    </h4>
+                    <p id="info-duration">Близько 24-30 годин</p>
+                </div>
+                <div class="info-card">
+                    <h4>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                        Документи
+                    </h4>
+                    <p>Дійсний біометричний закордонний паспорт.</p>
+                </div>
+                <div class="info-card">
+                    <h4>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 8h1a4 4 0 0 1 0 8h-1"></path><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path><line x1="6" y1="1" x2="6" y2="4"></line><line x1="10" y1="1" x2="10" y2="4"></line><line x1="14" y1="1" x2="14" y2="4"></line></svg>
+                        Зупинки
+                    </h4>
+                    <p>Регулярні зупинки для відпочинку по маршруту.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. Audience Section -->
+    <section class="audience" id="audience">
+        <div class="container">
+            <h2 class="text-center">Для кого ця поїздка</h2>
+            <p class="section-description text-center mx-auto">Ця поїздка підходить для:</p>
+            <div class="audience-list">
+                <div class="audience-item">Тих, хто хоче відвідати святі місця Греції</div>
+                <div class="audience-item">Паломників</div>
+                <div class="audience-item">Сімей</div>
+                <div class="audience-item">Старших людей</div>
+                <div class="audience-item">Тих, хто шукає організовану поїздку без зайвих турбот</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. Booking Steps Section -->
+    <section class="booking-steps bg-light" id="booking">
+        <div class="container">
+            <h2 class="text-center">Як забронювати місце</h2>
+            <div class="steps-container scrollable-cards">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <p>Перегляньте дату найближчої поїздки</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <p>Перевірте кількість вільних місць</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <p>Зв'яжіться з водієм</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">4</div>
+                    <p>Підтвердіть свою участь</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">5</div>
+                    <p>Прийдіть на місце виїзду у домовлений час</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW: FAQ Section -->
+    <section class="faq" id="faq">
+        <div class="container">
+            <h2 class="text-center">Часті питання</h2>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>Як забронювати місце?</span>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Зателефонуйте або напишіть водієві у Viber, Telegram чи WhatsApp. Узгодьте дату та підтвердіть бронювання.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>Звідки виїзд?</span>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Основне місто виїзду — <span id="faq-city">Чернівці</span>. Можлива підсадка пасажирів по маршруту. Деталі уточнюйте у водія.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>Через які країни проходить маршрут?</span>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Маршрут проходить через Україну, Румунію та Болгарію до Греції.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>Який транспорт?</span>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Поїздка здійснюється на комфортному мікроавтобусі <span id="faq-transport">Renault Master</span>.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>Скільки місць у поїздці?</span>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Група невелика — до <span id="faq-seats">8</span> осіб.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>Чи можна їхати старшим людям?</span>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Так, поїздка організована так, щоб бути максимально комфортною для людей будь-якого віку. Робляться регулярні зупинки.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>Які документи потрібні?</span>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Для перетину кордону потрібен дійсний біометричний закордонний паспорт.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>Як дізнатися точну ціну?</span>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Точну ціну поїздки, враховуючи ваші побажання та місце посадки, ви можете дізнатися, зателефонувавши водієві.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 9. Contacts Section -->
+    <section class="contacts bg-light" id="contacts">
+        <div class="container">
+            <h2 class="text-center">Контакти</h2>
+            <div class="contacts-wrapper">
+                <div class="contacts-info">
+                    <div class="info-group">
+                        <span class="info-label">Водій:</span>
+                        <span class="info-value" id="contact-driver">Сергій</span>
+                    </div>
+                    <div class="info-group">
+                        <span class="info-label">Телефон:</span>
+                        <div style="display: flex; align-items: center; justify-content: center; gap: 8px;">
+                            <span class="info-value"><a href="tel:+380000000000" id="contact-phone-display">+380 00 000 00 00</a></span>
+                            <button id="btn-copy-phone" aria-label="Скопіювати номер" style="background: none; border: none; color: var(--text-muted); cursor: pointer; padding: 4px; display: flex; align-items: center; justify-content: center; border-radius: 4px; transition: color 0.2s;">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="info-group">
+                        <span class="info-label">Час для дзвінків:</span>
+                        <span class="info-value" id="contact-time">09:00–21:00</span>
+                    </div>
+                </div>
+                <div class="contacts-actions">
+                    <a href="#" id="btn-phone" class="btn btn-outline btn-contact">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path
+                                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                        </svg>
+                        Подзвонити
+                    </a>
+                    <a href="#" id="btn-viber" class="btn btn-outline btn-contact viber-btn" target="_blank" rel="noopener noreferrer">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path
+                                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                        </svg>
+                        Viber
+                    </a>
+                    <a href="#" id="btn-tg" class="btn btn-outline btn-contact tg-btn" target="_blank" rel="noopener noreferrer">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <line x1="22" y1="2" x2="11" y2="13" />
+                            <polygon points="22 2 15 22 11 13 2 9 22 2" />
+                        </svg>
+                        Telegram
+                    </a>
+                    <a href="#" id="btn-wa" class="btn btn-outline btn-contact wa-btn" target="_blank" rel="noopener noreferrer">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path
+                                d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
+                        </svg>
+                        WhatsApp
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 10. Footer -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M12 2v20" />
+                        <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+                    </svg>
+                    <span>Поїздки до Греції</span>
+                </div>
+                <div class="footer-links">
+                    <button class="footer-link-btn" id="open-terms">Умови використання</button>
+                    <button class="footer-link-btn" id="open-privacy">Політика конфіденційності</button>
+                    <button class="footer-link-btn" id="open-rules">Правила бронювання</button>
+                </div>
+            </div>
+
+            <div class="footer-warning">
+                <p><strong>Попередження:</strong> Сайт має виключно інформаційний характер і не здійснює продаж послуг онлайн. Дата, маршрут, ціна та кількість вільних місць можуть змінюватися. Актуальну інформацію уточнюйте безпосередньо у водія.</p>
+            </div>
+
+            <div class="footer-bottom">
+                <p>© 2026 Поїздки до Греції. Усі права захищені.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Bottom Contact Bar -->
+    <div class="mobile-bottom-bar">
+        <a href="tel:" id="mobile-btn-phone" class="btn btn-outline mobile-bar-btn">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+            Подзвонити
+        </a>
+        <button class="btn btn-primary mobile-bar-btn" id="mobile-btn-write">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+            Написати
+        </button>
+    </div>
+
+    <!-- Bottom Sheet for Contacts -->
+    <div class="bottom-sheet-overlay" id="contact-sheet" aria-hidden="true">
+        <div class="bottom-sheet">
+            <div class="sheet-header">
+                <h3>Написати водієві</h3>
+                <button class="close-sheet" id="close-sheet" aria-label="Закрити">&times;</button>
+            </div>
+            <div class="sheet-body">
+                <a href="#" class="btn btn-outline btn-block viber-btn mb-3" id="sheet-btn-viber" target="_blank" rel="noopener noreferrer">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                    Viber
+                </a>
+                <a href="#" class="btn btn-outline btn-block tg-btn mb-3" id="sheet-btn-tg" target="_blank" rel="noopener noreferrer">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+                    Telegram
+                </a>
+                <a href="#" class="btn btn-outline btn-block wa-btn" id="sheet-btn-wa" target="_blank" rel="noopener noreferrer">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+                    WhatsApp
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Legal Modals -->
+    <div class="modal" id="modal-terms" role="dialog" aria-modal="true" aria-labelledby="terms-title" aria-hidden="true">
+        <div class="modal-content">
+            <button class="close-modal" aria-label="Закрити">&times;</button>
+            <h2 id="terms-title">Умови використання</h2>
+            <div class="modal-body text-formatted">
+                <p>Цей сайт створено виключно з інформаційною метою для ознайомлення з паломницькими поїздками до Греції.</p>
+                <ul>
+                    <li>Сайт не приймає оплату онлайн і не є електронним магазином.</li>
+                    <li>Сайт не збирає банківські дані або інші платіжні реквізити.</li>
+                    <li>Вся інформація на сайті (дати, наявність місць, маршрут) є орієнтовною і може бути змінена. Точні деталі узгоджуються лише напряму з водієм.</li>
+                    <li>Використовуючи контактні дані на сайті, ви погоджуєтесь зв'язатися з перевізником напряму для уточнення умов поїздки.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="modal-privacy" role="dialog" aria-modal="true" aria-labelledby="privacy-title" aria-hidden="true">
+        <div class="modal-content">
+            <button class="close-modal" aria-label="Закрити">&times;</button>
+            <h2 id="privacy-title">Політика конфіденційності</h2>
+            <div class="modal-body text-formatted">
+                <p>Ми поважаємо вашу конфіденційність та захищаємо ваші дані.</p>
+                <ul>
+                    <li>Сайт не містить форм реєстрації та не вимагає залишати персональні дані онлайн.</li>
+                    <li>Якщо ви вирішите зв'язатися з водієм через Viber, Telegram, WhatsApp або за телефоном, ваші контактні дані будуть використані виключно для організації вашої поїздки.</li>
+                    <li>Ми не передаємо ваші контактні дані третім особам для маркетингових цілей.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="modal-rules" role="dialog" aria-modal="true" aria-labelledby="rules-title" aria-hidden="true">
+        <div class="modal-content">
+            <button class="close-modal" aria-label="Закрити">&times;</button>
+            <h2 id="rules-title">Правила бронювання</h2>
+            <div class="modal-body text-formatted">
+                <p>Процес бронювання є максимально простим і відбувається напряму:</p>
+                <ol>
+                    <li>Зв'яжіться з водієм (Сергій) зручним для вас способом (телефон, Viber, Telegram, WhatsApp).</li>
+                    <li>Уточніть актуальну дату виїзду, наявність вільних місць та ціну.</li>
+                    <li>Узгодьте місце посадки у вашому місті (основне місто виїзду - Чернівці, можлива підсадка по маршруту).</li>
+                    <li>Водій повідомить вам необхідні деталі для підтвердження бронювання місця.</li>
+                </ol>
+                <p>Будь ласка, попереджайте заздалегідь, якщо ваші плани змінилися і ви не зможете поїхати, щоб ваше місце могли зайняти інші паломники.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast" aria-live="polite">Номер скопійовано ✔️</div>
+
+    <!-- Scripts -->
+    <script src="config.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
