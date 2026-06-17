@@ -6,8 +6,10 @@ const siteConfig = {
     route: "Україна → Румунія → Болгарія → Греція",
     transport: "Renault Master",
     departureCity: "Чернівці",
-    estimatedDuration: "24–30 годин",
+    departurePlace: "Точне місце виїзду уточнюється перед поїздкою",
+    estimatedDuration: "приблизно 24–30 годин дороги",
     price: "уточнюйте у водія",
+    tripNotes: "дату, маршрут, ціну і кількість місць уточнюйте у водія",
     
     // Контактна інформація
     driverName: "Сергій",

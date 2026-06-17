@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Поїздки до Греції по святих місцях | Паломницький тур</title>
+    <title>Свята Греція | Паломницькі поїздки по святих місцях з Чернівців</title>
     <meta name="description"
         content="Комфортні паломницькі поїздки до святих місць Греції. Маршрут через Румунію та Болгарію на Renault Master. Дати, ціна та бронювання.">
     <meta name="keywords"
@@ -20,6 +20,24 @@
     <meta property="og:url" content="https://greecetravel.vercel.app/">
     <meta property="og:image" content="https://greecetravel.vercel.app/assets/og-image.jpg">
     <meta name="twitter:card" content="summary_large_image">
+    
+    <!-- Schema.org -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "TravelAgency",
+      "name": "Свята Греція",
+      "description": "Комфортні паломницькі поїздки до святих місць Греції з Чернівців на Renault Master.",
+      "url": "https://greecetravel.vercel.app/",
+      "image": "https://greecetravel.vercel.app/assets/og-image.jpg",
+      "telephone": "+38000000000",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Чернівці",
+        "addressCountry": "UA"
+      }
+    }
+    </script>
 
     <!-- Security Headers via Meta -->
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
@@ -68,18 +86,17 @@
         <div class="container hero-content">
             <div class="hero-text-side">
                 <h1>Поїздки до Греції по святих місцях</h1>
+                <p class="subtitle">Паломницька поїздка невеликою групою з Чернівців до Греції через Румунію та Болгарію на Renault Master.</p>
                 <div class="hero-badges">
-                    <span class="badge" id="hero-badge-transport">Renault Master</span>
-                    <span class="badge">Через Румунію та Болгарію</span>
                     <span class="badge badge-accent">Найближча: <span id="hero-date">21 червня 2026</span></span>
                     <span class="badge badge-outline">Місць: <span id="hero-seats">4</span> з <span id="hero-seats-total">8</span></span>
-                    <span class="badge">Виїзд: Могилів-Подільський</span>
+                    <span class="badge">Виїзд: <span id="hero-city">Чернівці</span></span>
+                    <span class="badge" id="hero-badge-transport">Renault Master</span>
+                    <span class="badge" id="hero-route-badge">Україна → Румунія → Болгарія → Греція</span>
                 </div>
-                <p class="subtitle">Комфортна паломницька поїздка через Румунію та Болгарію на <span id="hero-transport-text">Renault Master</span></p>
-                <p class="description">Організовані поїздки невеликими групами до духовних місць Греції. Зручний маршрут, комфортний транспорт і можливість швидко зв'язатися з водієм для бронювання місця.</p>
                 <div class="hero-actions">
-                    <a href="#route" class="btn btn-outline btn-lg">Переглянути маршрут</a>
-                    <a href="#contacts" class="btn btn-primary btn-lg">Зв'язатися з водієм</a>
+                    <a href="tel:+38000000000" class="btn btn-outline btn-lg" id="hero-call-btn">Подзвонити</a>
+                    <button class="btn btn-primary btn-lg open-messenger-modal">Написати у месенджер</button>
                 </div>
             </div>
             <div class="hero-image-side">
@@ -90,6 +107,24 @@
         </div>
     </section>
 
+    <!-- 1.5 Short Summary -->
+    <section class="trip-summary" id="summary" style="padding: 32px 0; background: var(--surface-color); border-bottom: 1px solid var(--border-color);">
+        <div class="container">
+            <h2 class="text-center" style="font-size: 1.75rem; margin-bottom: 24px;">Коротко про найближчу поїздку</h2>
+            <div class="summary-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px;">
+                <div class="summary-item"><strong>Дата:</strong> <span id="summary-date">21 червня 2026</span></div>
+                <div class="summary-item"><strong>Виїзд:</strong> <span id="summary-city">Чернівці</span></div>
+                <div class="summary-item"><strong>Місць:</strong> <span id="summary-seats">4 з 8</span></div>
+                <div class="summary-item"><strong>Транспорт:</strong> <span id="summary-transport">Renault Master</span></div>
+                <div class="summary-item"><strong>Маршрут:</strong> <span id="summary-route">Україна → Румунія → Болгарія → Греція</span></div>
+                <div class="summary-item"><strong>Ціна:</strong> <span id="summary-price">уточнюйте у водія</span></div>
+                <div class="summary-item"><strong>Тривалість:</strong> <span id="summary-duration">приблизно 24–30 годин дороги</span></div>
+            </div>
+            <p class="text-center text-muted" style="margin-top: 24px; font-size: 0.9rem;">
+                <em>Примітка: <span id="summary-notes">дату, маршрут, ціну і кількість місць уточнюйте у водія.</span></em>
+            </p>
+        </div>
+    </section>
     <!-- NEW: Benefits Section -->
     <section class="benefits bg-light" id="benefits">
         <div class="container">
@@ -130,78 +165,35 @@
             <h2 class="text-center">Маршрут</h2>
             <div class="route-steps">
                 <div class="route-step">
-                    <div class="step-icon">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M5 12h14" />
-                            <path d="m12 5 7 7-7 7" />
-                        </svg>
-                    </div>
-                    <div class="step-content">
-                        <h3>1. Виїзд з України</h3>
-                    </div>
+                    <div class="step-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg></div>
+                    <div class="step-content"><h3>1. Виїзд з Чернівців</h3></div>
                 </div>
                 <div class="route-step">
-                    <div class="step-icon">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M5 12h14" />
-                            <path d="m12 5 7 7-7 7" />
-                        </svg>
-                    </div>
-                    <div class="step-content">
-                        <h3>2. Дорога через Румунію</h3>
-                    </div>
+                    <div class="step-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg></div>
+                    <div class="step-content"><h3>2. Перетин кордону</h3></div>
                 </div>
                 <div class="route-step">
-                    <div class="step-icon">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M5 12h14" />
-                            <path d="m12 5 7 7-7 7" />
-                        </svg>
-                    </div>
-                    <div class="step-content">
-                        <h3>3. Дорога через Болгарію</h3>
-                    </div>
+                    <div class="step-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg></div>
+                    <div class="step-content"><h3>3. Дорога через Румунію</h3></div>
                 </div>
                 <div class="route-step">
-                    <div class="step-icon">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M5 12h14" />
-                            <path d="m12 5 7 7-7 7" />
-                        </svg>
-                    </div>
-                    <div class="step-content">
-                        <h3>4. Прибуття до Греції</h3>
-                    </div>
+                    <div class="step-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg></div>
+                    <div class="step-content"><h3>4. Дорога через Болгарію</h3></div>
                 </div>
                 <div class="route-step">
-                    <div class="step-icon">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M5 12h14" />
-                            <path d="m12 5 7 7-7 7" />
-                        </svg>
-                    </div>
-                    <div class="step-content">
-                        <h3>5. Відвідування святих місць</h3>
-                    </div>
+                    <div class="step-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg></div>
+                    <div class="step-content"><h3>5. Прибуття до Греції</h3></div>
                 </div>
                 <div class="route-step">
-                    <div class="step-icon">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M5 12h14" />
-                            <path d="m12 5 7 7-7 7" />
-                        </svg>
-                    </div>
-                    <div class="step-content">
-                        <h3>6. Повернення додому</h3>
-                    </div>
+                    <div class="step-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg></div>
+                    <div class="step-content"><h3>6. Відвідування святих місць</h3></div>
+                </div>
+                <div class="route-step">
+                    <div class="step-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg></div>
+                    <div class="step-content"><h3>7. Повернення назад</h3></div>
                 </div>
             </div>
+            <p class="text-center text-muted" style="margin-top: 32px; font-size: 0.95rem;"><em>* Точний маршрут, зупинки та час прибуття уточнюються перед поїздкою.</em></p>
         </div>
     </section>
 
@@ -310,8 +302,8 @@
                 <div class="transport-image-group">
                     <img src="assets/car-bg-removed.png" alt="Мікроавтобус Renault Master для паломницької поїздки" width="600" height="400" loading="lazy" class="main-transport-img">
                     <div class="transport-gallery">
-                        <img src="assets/renault-interior.png" alt="Салон мікроавтобуса Renault Master" style="width: 100%; height: 120px; object-fit: cover; border-radius: var(--radius-md);" loading="lazy">
-                        <img src="assets/renault-luggage.png" alt="Багажник мікроавтобуса Renault Master" style="width: 100%; height: 120px; object-fit: cover; border-radius: var(--radius-md);" loading="lazy">
+                        <img src="assets/renault-interior.png" alt="Салон мікроавтобуса Renault Master" width="300" height="120" style="width: 100%; height: 120px; object-fit: cover; border-radius: var(--radius-md);" loading="lazy">
+                        <img src="assets/renault-luggage.png" alt="Багажник мікроавтобуса Renault Master" width="300" height="120" style="width: 100%; height: 120px; object-fit: cover; border-radius: var(--radius-md);" loading="lazy">
                     </div>
                 </div>
             </div>
@@ -421,17 +413,43 @@
         </div>
     </section>
 
-    <!-- 7. Audience Section -->
-    <section class="audience" id="audience">
+    <!-- 7. Before Booking Section -->
+    <section class="before-booking" id="before-booking" style="padding: 48px 0; background: var(--surface-color);">
         <div class="container">
-            <h2 class="text-center">Для кого ця поїздка</h2>
-            <p class="section-description text-center mx-auto">Ця поїздка підходить для:</p>
-            <div class="audience-list">
-                <div class="audience-item">Тих, хто хоче відвідати святі місця Греції</div>
-                <div class="audience-item">Паломників</div>
-                <div class="audience-item">Сімей</div>
-                <div class="audience-item">Старших людей</div>
-                <div class="audience-item">Тих, хто шукає організовану поїздку без зайвих турбот</div>
+            <h2 class="text-center">Перед бронюванням уточніть</h2>
+            <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-top: 24px;">
+                <span class="badge badge-outline">Актуальну дату</span>
+                <span class="badge badge-outline">Вільні місця</span>
+                <span class="badge badge-outline">Ціну</span>
+                <span class="badge badge-outline">Місце посадки</span>
+                <span class="badge badge-outline">Необхідні документи</span>
+                <span class="badge badge-outline">Умови передоплати</span>
+                <span class="badge badge-outline">Деталі маршруту</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. Small Group Section -->
+    <section class="small-group" id="small-group" style="padding: 48px 0;">
+        <div class="container">
+            <h2 class="text-center">Чому краще їхати невеликою групою</h2>
+            <div class="grid-cards mt-4" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));">
+                <div class="card" style="padding: 24px;">
+                    <h4>Спокійніше в дорозі</h4>
+                    <p class="text-muted text-small">Відсутність галасу великих автобусів дозволяє відпочити та налаштуватися на паломництво.</p>
+                </div>
+                <div class="card" style="padding: 24px;">
+                    <h4>Менше метушні</h4>
+                    <p class="text-muted text-small">Швидший перетин кордонів та менше часу на збори під час зупинок.</p>
+                </div>
+                <div class="card" style="padding: 24px;">
+                    <h4>Гнучкість</h4>
+                    <p class="text-muted text-small">Легше домовитися з водієм про індивідуальні потреби та зручніші зупинки.</p>
+                </div>
+                <div class="card" style="padding: 24px;">
+                    <h4>Прямий контакт</h4>
+                    <p class="text-muted text-small">Спілкування безпосередньо з водієм без складної бюрократії організаторів.</p>
+                </div>
             </div>
         </div>
     </section>
@@ -472,84 +490,94 @@
             <div class="faq-container">
                 <div class="faq-item">
                     <button class="faq-question" aria-expanded="false">
-                        <span>Як забронювати місце?</span>
+                        <span>1. Звідки виїзд?</span>
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
                     </button>
-                    <div class="faq-answer">
-                        <p>Зателефонуйте або напишіть водієві у Viber, Telegram чи WhatsApp. Узгодьте дату та підтвердіть бронювання.</p>
-                    </div>
+                    <div class="faq-answer"><p>Основне місто виїзду — Чернівці. Точне місце збору групи та можливість підсадки по маршруту узгоджується безпосередньо з водієм.</p></div>
                 </div>
                 <div class="faq-item">
                     <button class="faq-question" aria-expanded="false">
-                        <span>Скільки коштує поїздка?</span>
+                        <span>2. Яка вартість поїздки?</span>
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
                     </button>
-                    <div class="faq-answer">
-                        <p>Точну ціну поїздки ви можете дізнатися, зателефонувавши водієві, оскільки вона може залежати від місця вашої посадки.</p>
-                    </div>
+                    <div class="faq-answer"><p>Вартість може залежати від місця вашої посадки. Будь ласка, зателефонуйте водієві або напишіть у месенджер для уточнення актуальної ціни.</p></div>
                 </div>
                 <div class="faq-item">
                     <button class="faq-question" aria-expanded="false">
-                        <span>Чи потрібна передоплата?</span>
+                        <span>3. Чи потрібна передоплата?</span>
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
                     </button>
-                    <div class="faq-answer">
-                        <p>Деталі щодо передоплати та повного розрахунку обговорюються індивідуально з водієм під час бронювання місця.</p>
-                    </div>
+                    <div class="faq-answer"><p>Умови передоплати та повного розрахунку індивідуальні. Уточніть цей момент у водія під час бронювання місця.</p></div>
                 </div>
                 <div class="faq-item">
                     <button class="faq-question" aria-expanded="false">
-                        <span>Де точне місце виїзду?</span>
+                        <span>4. Скільки триває дорога?</span>
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
                     </button>
-                    <div class="faq-answer">
-                        <p>Основне місто виїзду — <span id="faq-city">Чернівці</span>. Точна адреса збору групи узгоджується напередодні поїздки.</p>
-                    </div>
+                    <div class="faq-answer"><p>Орієнтовна тривалість становить 24–30 годин. Час в дорозі залежить від черг на кордонах України, Румунії та Болгарії.</p></div>
                 </div>
                 <div class="faq-item">
                     <button class="faq-question" aria-expanded="false">
-                        <span>Чи можна підсісти по маршруту?</span>
+                        <span>5. Які документи потрібні?</span>
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
                     </button>
-                    <div class="faq-answer">
-                        <p>Так, можлива підсадка пасажирів по маршруту. Попередьте про це водія заздалегідь.</p>
-                    </div>
+                    <div class="faq-answer"><p>Для перетину кордону потрібен дійсний біометричний закордонний паспорт. Також радимо мати медичне страхування.</p></div>
                 </div>
                 <div class="faq-item">
                     <button class="faq-question" aria-expanded="false">
-                        <span>Скільки триває дорога?</span>
+                        <span>6. Який транспорт?</span>
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
                     </button>
-                    <div class="faq-answer">
-                        <p>Орієнтовна тривалість поїздки становить 24–30 годин, залежно від черг на кордонах.</p>
-                    </div>
+                    <div class="faq-answer"><p>Поїздка здійснюється на комфортному мікроавтобусі Renault Master, спеціально підготовленому для дальніх подорожей.</p></div>
                 </div>
                 <div class="faq-item">
                     <button class="faq-question" aria-expanded="false">
-                        <span>Які документи потрібні?</span>
+                        <span>7. Скільки місць в автобусі?</span>
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
                     </button>
-                    <div class="faq-answer">
-                        <p>Для перетину кордону потрібен дійсний біометричний закордонний паспорт.</p>
-                    </div>
+                    <div class="faq-answer"><p>Ми беремо до 8 пасажирів, щоб усім було достатньо місця та комфортно протягом тривалої поїздки.</p></div>
                 </div>
                 <div class="faq-item">
                     <button class="faq-question" aria-expanded="false">
-                        <span>Чи підходить поїздка старшим людям?</span>
+                        <span>8. Що входить у вартість?</span>
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
                     </button>
-                    <div class="faq-answer">
-                        <p>Так, поїздка організована максимально комфортно. Транспорт зручний, і водій робить регулярні зупинки для відпочинку.</p>
-                    </div>
+                    <div class="faq-answer"><p>У базову вартість входить місце в автобусі, перевезення за маршрутом Україна-Греція-Україна (або в один бік) та ваш багаж.</p></div>
                 </div>
                 <div class="faq-item">
                     <button class="faq-question" aria-expanded="false">
-                        <span>Що робити, якщо плани змінилися?</span>
+                        <span>9. Чи є додаткові витрати?</span>
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
                     </button>
-                    <div class="faq-answer">
-                        <p>Будь ласка, повідомте водія якнайшвидше, щоб ваше місце могли зайняти інші люди, які хочуть поїхати.</p>
-                    </div>
+                    <div class="faq-answer"><p>Особисті витрати на їжу в дорозі, медичне страхування та можливі платні екскурсії або ночівлі (якщо такі передбачені програмою) оплачуються окремо.</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>10. Чи будуть зупинки в дорозі?</span>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+                    </button>
+                    <div class="faq-answer"><p>Так, водій робить регулярні зупинки на обладнаних заправках для відпочинку, перекусу та туалету.</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>11. Чи можна поїхати з дітьми?</span>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+                    </button>
+                    <div class="faq-answer"><p>Це паломницька поїздка, яка вимагає витримки в довгій дорозі. Якщо ви плануєте їхати з дітьми, обов'язково обговоріть це з водієм заздалегідь.</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>12. Чи підходить поїздка літнім людям?</span>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+                    </button>
+                    <div class="faq-answer"><p>Так. Невелика група дозволяє водієві бути уважнішим до потреб пасажирів, а зупинки роблять дорогу легшою.</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>13. Що робити, якщо мої плани зміняться?</span>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+                    </button>
+                    <div class="faq-answer"><p>Оскільки кількість місць обмежена (всього 8), дуже просимо повідомляти про скасування якомога раніше, щоб ваше місце міг зайняти хтось інший.</p></div>
                 </div>
             </div>
         </div>
@@ -558,60 +586,49 @@
     <!-- 9. Contacts Section -->
     <section class="contacts bg-light" id="contacts">
         <div class="container">
-            <h2 class="text-center">Контакти</h2>
-            <div class="contacts-wrapper">
-                <div class="contacts-info">
-                    <div class="info-group">
-                        <span class="info-label">Водій:</span>
-                        <span class="info-value" id="contact-driver">Сергій</span>
+            <h2 class="text-center">Контакти водія</h2>
+            <p class="section-description text-center mx-auto" style="margin-bottom: 32px;">Всі деталі поїздки, точну ціну, актуальний маршрут та кількість вільних місць уточнюйте безпосередньо у водія.</p>
+            
+            <div class="driver-card" style="max-width: 600px; margin: 0 auto; background: var(--surface-color); border-radius: var(--radius-lg); padding: 32px; box-shadow: var(--shadow-md); display: flex; flex-direction: column; gap: 24px; border: 1px solid var(--border-color);">
+                <div style="display: flex; align-items: center; gap: 24px; flex-wrap: wrap;">
+                    <div class="driver-photo-placeholder" style="width: 100px; height: 100px; background: #e2e8f0; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--text-muted); text-align: center; font-size: 0.8rem; padding: 12px; border: 2px solid var(--border-color);">
+                        Фото водія буде додано
                     </div>
-                    <div class="info-group">
-                        <span class="info-label">Телефон:</span>
-                        <div style="display: flex; align-items: center; justify-content: center; gap: 8px;">
-                            <span class="info-value"><a href="tel:+380000000000" id="contact-phone-display">+380 00 000 00 00</a></span>
-                            <button id="btn-copy-phone" aria-label="Скопіювати номер" style="background: none; border: none; color: var(--text-muted); cursor: pointer; padding: 4px; display: flex; align-items: center; justify-content: center; border-radius: 4px; transition: color 0.2s;">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-                            </button>
+                    <div>
+                        <h3 style="margin-bottom: 8px; font-size: 1.5rem;">Сергій</h3>
+                        <div style="display: flex; align-items: center; gap: 8px; color: var(--text-muted); margin-bottom: 4px;">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                            <span id="contact-time">Час для дзвінків: 09:00–21:00</span>
                         </div>
                     </div>
-                    <div class="info-group">
-                        <span class="info-label">Час для дзвінків:</span>
-                        <span class="info-value" id="contact-time">09:00–21:00</span>
+                </div>
+                
+                <div style="border-top: 1px solid var(--border-color); padding-top: 24px;">
+                    <div style="margin-bottom: 16px; font-weight: 600;">Телефон:</div>
+                    <div style="display: flex; align-items: center; gap: 12px;">
+                        <a href="tel:+38000000000" id="btn-phone" class="btn btn-primary btn-lg" style="flex: 1; display: flex; justify-content: center; gap: 8px;">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                            <span id="contact-phone-display">+380 00 000 00 00</span>
+                        </a>
                     </div>
                 </div>
-                <div class="contacts-actions">
-                    <a href="#" id="btn-phone" class="btn btn-outline btn-contact">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                            <path
-                                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
-                        </svg>
-                        Подзвонити
-                    </a>
-                    <a href="#" id="btn-viber" class="btn btn-outline btn-contact viber-btn" target="_blank" rel="noopener noreferrer">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                            <path
-                                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
-                        </svg>
-                        Viber
-                    </a>
-                    <a href="#" id="btn-tg" class="btn btn-outline btn-contact tg-btn" target="_blank" rel="noopener noreferrer">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                            <line x1="22" y1="2" x2="11" y2="13" />
-                            <polygon points="22 2 15 22 11 13 2 9 22 2" />
-                        </svg>
-                        Telegram
-                    </a>
-                    <a href="#" id="btn-wa" class="btn btn-outline btn-contact wa-btn" target="_blank" rel="noopener noreferrer">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                            <path
-                                d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
-                        </svg>
-                        WhatsApp
-                    </a>
+
+                <div style="border-top: 1px solid var(--border-color); padding-top: 24px;">
+                    <div style="margin-bottom: 16px; font-weight: 600;">Месенджери:</div>
+                    <div class="contacts-actions" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 12px;">
+                        <a href="#" id="btn-viber" class="btn btn-outline viber-btn" target="_blank" rel="noopener noreferrer" style="justify-content: center;">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                            Viber
+                        </a>
+                        <a href="#" id="btn-tg" class="btn btn-outline tg-btn" target="_blank" rel="noopener noreferrer" style="justify-content: center;">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+                            Telegram
+                        </a>
+                        <a href="#" id="btn-wa" class="btn btn-outline wa-btn" target="_blank" rel="noopener noreferrer" style="justify-content: center;">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+                            WhatsApp
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>

@@ -22,11 +22,20 @@ document.addEventListener('DOMContentLoaded', () => {
         updateElementText('hero-date', siteConfig.tripDate);
         updateElementText('hero-seats', siteConfig.seatsAvailable);
         updateElementText('hero-seats-total', siteConfig.seatsTotal);
-        updateElementText('hero-transport-text', siteConfig.transport);
+        updateElementText('hero-city', siteConfig.departureCity);
+        updateElementText('hero-badge-transport', siteConfig.transport);
+        updateElementText('hero-route-badge', siteConfig.route);
+        updateElementLink('hero-call-btn', siteConfig.phoneLink, 'tel:');
         
-        // Benefits & About
-        updateElementText('benefit-transport', siteConfig.transport);
-        updateElementText('about-transport', siteConfig.transport);
+        // Summary Block
+        updateElementText('summary-date', siteConfig.tripDate);
+        updateElementText('summary-city', siteConfig.departureCity);
+        updateElementText('summary-seats', siteConfig.seatsAvailable + ' з ' + siteConfig.seatsTotal);
+        updateElementText('summary-transport', siteConfig.transport);
+        updateElementText('summary-route', siteConfig.route);
+        updateElementText('summary-price', siteConfig.price);
+        updateElementText('summary-duration', siteConfig.estimatedDuration);
+        updateElementText('summary-notes', siteConfig.tripNotes);
 
         // Next Trip
         updateElementText('trip-date', siteConfig.tripDate);
@@ -46,8 +55,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // FAQ
         updateElementText('faq-city', siteConfig.departureCity);
-        updateElementText('faq-transport', siteConfig.transport);
-        updateElementText('faq-seats', siteConfig.seatsTotal);
 
         // Contacts Info
         updateElementText('contact-driver', siteConfig.driverName);
@@ -57,14 +64,20 @@ document.addEventListener('DOMContentLoaded', () => {
         // Contact Links (Hide if empty)
         updateElementLink('contact-phone-display', siteConfig.phoneLink, 'tel:');
         updateElementLink('btn-phone', siteConfig.phoneLink, 'tel:');
-        updateElementLink('btn-viber', siteConfig.viberLink);
-        updateElementLink('btn-tg', siteConfig.telegramLink);
-        updateElementLink('btn-wa', siteConfig.whatsappLink);
-
-        // Mobile Sheet Links (Hide if empty)
-        updateElementLink('sheet-btn-viber', siteConfig.viberLink);
-        updateElementLink('sheet-btn-tg', siteConfig.telegramLink);
-        updateElementLink('sheet-btn-wa', siteConfig.whatsappLink);
+        
+        // Update all messenger buttons by class
+        document.querySelectorAll('.viber-btn').forEach(btn => {
+            if(siteConfig.viberLink) btn.href = siteConfig.viberLink;
+            else btn.style.display = 'none';
+        });
+        document.querySelectorAll('.tg-btn').forEach(btn => {
+            if(siteConfig.telegramLink) btn.href = siteConfig.telegramLink;
+            else btn.style.display = 'none';
+        });
+        document.querySelectorAll('.wa-btn').forEach(btn => {
+            if(siteConfig.whatsappLink) btn.href = siteConfig.whatsappLink;
+            else btn.style.display = 'none';
+        });
 
         // Mobile Bar Links
         updateElementLink('mobile-btn-phone', siteConfig.phoneLink, 'tel:');
