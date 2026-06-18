@@ -89,6 +89,22 @@ document.addEventListener('DOMContentLoaded', () => {
             const noMsg = document.getElementById('sheet-no-messengers');
             if (noMsg) noMsg.style.display = 'block';
         }
+        // Seats Progress Bar
+        const seatsAvail = parseInt(siteConfig.seatsAvailable) || 0;
+        const seatsTotal = parseInt(siteConfig.seatsTotal) || 8;
+        const seatsFill = document.getElementById('seats-fill');
+        const seatsCountEl = document.getElementById('seats-count');
+        const seatsTotalBarEl = document.getElementById('seats-total-bar');
+        if (seatsFill) {
+            const booked = seatsTotal - seatsAvail;
+            const percent = Math.round((booked / seatsTotal) * 100);
+            seatsFill.style.width = percent + '%';
+        }
+        if (seatsCountEl) seatsCountEl.textContent = seatsAvail;
+        if (seatsTotalBarEl) seatsTotalBarEl.textContent = seatsTotal;
+
+        // Driver Name
+        updateElementText('driver-name', siteConfig.driverName);
     }
 
     // ==========================================
@@ -488,6 +504,45 @@ document.addEventListener('DOMContentLoaded', () => {
 
         carousels.forEach(carousel => {
             carouselObserver.observe(carousel);
+        });
+    }
+    // ==========================================
+    // 11. SCROLL ANIMATIONS (fade-up)
+    // ==========================================
+    const fadeElements = document.querySelectorAll('.fade-up');
+    if ('IntersectionObserver' in window && fadeElements.length > 0) {
+        const fadeObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    fadeObserver.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.15,
+            rootMargin: '0px 0px -40px 0px'
+        });
+        fadeElements.forEach(el => fadeObserver.observe(el));
+    } else {
+        // Fallback: just show everything
+        fadeElements.forEach(el => el.classList.add('visible'));
+    }
+
+    // ==========================================
+    // 12. SCROLL TO TOP BUTTON
+    // ==========================================
+    const scrollTopBtn = document.getElementById('scroll-top-btn');
+    if (scrollTopBtn) {
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 600) {
+                scrollTopBtn.classList.add('visible');
+            } else {
+                scrollTopBtn.classList.remove('visible');
+            }
+        }, { passive: true });
+
+        scrollTopBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         });
     }
 

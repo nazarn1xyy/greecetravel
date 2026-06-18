@@ -30,7 +30,7 @@
     <meta name="referrer" content="strict-origin-when-cross-origin">
 
 
-    <link rel="stylesheet" href="style.css?v=13">
+    <link rel="stylesheet" href="style.css?v=20">
 </head>
 
 <body>
@@ -65,23 +65,30 @@
     </header>
 
     <!-- 1. Hero Section -->
-    <section class="hero greek-pattern" id="home">
+    <section class="hero" id="home">
         <div class="container hero-content">
             <div class="hero-text-side">
-                <h1>Поїздки до Греції по святих місцях</h1>
-                <p class="subtitle">Паломницька поїздка невеликою групою з Могилева-Подільського до Греції через Румунію та Болгарію на Renault Master.</p>
-                <div class="hero-badges">
+                <h1 class="fade-up">Поїздки до Греції по святих місцях</h1>
+                <p class="subtitle fade-up stagger-1">Паломницька поїздка невеликою групою з Могилева-Подільського до Греції через Румунію та Болгарію на Renault Master.</p>
+                <div class="hero-badges fade-up stagger-2">
                     <span class="badge badge-accent">Найближча: <span id="hero-date">21 червня 2026</span></span>
                     <span class="badge badge-outline">Місць: <span id="hero-seats">4</span> з <span id="hero-seats-total">8</span></span>
                     <span class="badge">Виїзд: <span id="hero-city">Могилів-Подільський</span></span>
                     <span class="badge" id="hero-badge-transport">Renault Master</span>
                 </div>
-                <div class="hero-actions">
+                <!-- Seats Progress Bar -->
+                <div class="seats-progress-wrapper fade-up stagger-3" id="seats-progress">
+                    <span class="seats-progress-text">Залишилось лише <strong id="seats-count">4</strong> з <strong id="seats-total-bar">8</strong> місць!</span>
+                    <div class="seats-progress-bar">
+                        <div class="seats-progress-fill" id="seats-fill" style="width: 50%;"></div>
+                    </div>
+                </div>
+                <div class="hero-actions fade-up stagger-4">
                     <a href="tel:+38000000000" class="btn btn-outline btn-lg" id="hero-call-btn">Подзвонити</a>
-                    <button class="btn btn-primary btn-lg open-messenger-modal">Написати у месенджер</button>
+                    <button class="btn btn-accent btn-lg btn-pulse open-messenger-modal">Забронювати місце</button>
                 </div>
             </div>
-            <div class="hero-image-side">
+            <div class="hero-image-side fade-up stagger-2">
                 <div class="hero-image-card">
                     <img src="assets/car-bg-removed.webp" alt="Renault Master для поїздки" width="600" height="400" fetchpriority="high">
                 </div>
@@ -89,11 +96,14 @@
         </div>
     </section>
 
+    <!-- Greek Divider -->
+    <div class="greek-divider"></div>
+
     <!-- 1.5 Short Summary -->
-    <section class="trip-summary bg-light" id="summary" style="padding: 48px 0;">
+    <section class="trip-summary bg-light" id="summary">
         <div class="container">
             <div class="summary-wrapper">
-                <h2 class="text-center" style="margin-bottom: 32px;">Коротко про найближчу поїздку</h2>
+                <div class="ornament"><h2>Коротко про найближчу поїздку</h2></div>
                 <div class="summary-bento">
                     <!-- Date -->
                     <div class="bento-item">
@@ -210,12 +220,32 @@
         </div>
     </section>
 
+    <!-- Greek Divider -->
+    <div class="greek-divider"></div>
+
     <!-- 2. About Section -->
     <section class="about" id="about">
         <div class="container text-center">
-            <h2>Про поїздку</h2>
-            <p class="section-description mx-auto">Ми організовуємо паломницькі поїздки невеликими групами до 8 осіб з Могилева-Подільського до Греції. Маршрут пролягає через Румунію та Болгарію. Водій Сергій має багаторічний досвід поїздок цим маршрутом — ви будете в надійних руках.</p>
-            <p class="section-description mx-auto" style="margin-top: 12px;">Серед святинь, які відвідують наші паломники: <strong>Метеори</strong> — стародавні монастирі на скелях, <strong>Салоніки</strong> з храмом Святого Димитрія, <strong>Верія</strong> — місто апостола Павла, та інші духовні місця північної Греції.</p>
+            <div class="ornament fade-up"><h2>Про поїздку</h2></div>
+            <p class="section-description mx-auto fade-up stagger-1">Ми організовуємо паломницькі поїздки невеликими групами до 8 осіб з Могилева-Подільського до Греції. Маршрут пролягає через Румунію та Болгарію. Водій Сергій має багаторічний досвід поїздок цим маршрутом — ви будете в надійних руках.</p>
+            <p class="section-description mx-auto fade-up stagger-2" style="margin-top: 12px;">Серед святинь, які відвідують наші паломники: <strong>Метеори</strong> — стародавні монастирі на скелях, <strong>Салоніки</strong> з храмом Святого Димитрія, <strong>Верія</strong> — місто апостола Павла, та інші духовні місця північної Греції.</p>
+        </div>
+    </section>
+
+    <!-- Driver Section -->
+    <section class="driver-section" id="driver">
+        <div class="container">
+            <div class="ornament fade-up"><h2>Ваш водій</h2></div>
+            <div class="driver-content fade-up stagger-1">
+                <div class="driver-photo">
+                    <img src="assets/driver.png" alt="Водій Сергій" width="180" height="180" loading="lazy">
+                </div>
+                <div class="driver-info">
+                    <h3 id="driver-name">Сергій</h3>
+                    <p class="driver-role">Досвідчений водій</p>
+                    <p>Сергій має багаторічний досвід організації паломницьких поїздок до Греції. Він чудово знає маршрут через Румунію та Болгарію, забезпечує комфорт і безпеку на всьому шляху. Ви будете в надійних руках — і зможете повністю зосередитися на духовному подорожі.</p>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -252,7 +282,7 @@
                     <text x="230" y="164" text-anchor="end" font-size="12" fill="var(--text-muted)">Транзит</text>
 
                     <!-- Bulgaria -->
-                    <circle cx="50" cy="260" r="8" fill="white" stroke="var(--primary-color)" stroke-width="3" filter="url(--shadow)" />
+                    <circle cx="50" cy="260" r="8" fill="white" stroke="var(--primary-color)" stroke-width="3" filter="url(#shadow)" />
                     <text x="75" y="256" font-size="16" font-weight="700" fill="var(--text-main)">Болгарія</text>
                     <text x="75" y="274" font-size="12" fill="var(--text-muted)">Транзит</text>
 
@@ -321,7 +351,7 @@
     <!-- 4. Holy Places Section -->
     <section class="holy-places" id="places">
         <div class="container">
-            <h2 class="text-center">Святі місця</h2>
+            <div class="ornament fade-up"><h2>Святі місця</h2></div>
             <p class="section-description text-center mx-auto">Учасники поїздки матимуть можливість відвідати монастирі,
                 храми, святині та духовні місця Греції.</p>
             <div class="carousel-container mt-4">
@@ -415,7 +445,7 @@
     <!-- NEW: Important Info Section -->
     <section class="important-info bg-light">
         <div class="container">
-            <h2 class="text-center">Важлива інформація</h2>
+            <div class="ornament fade-up"><h2>Важлива інформація</h2></div>
             <div class="info-grid">
                 <div class="info-card">
                     <h4>
@@ -899,12 +929,17 @@
         </div>
     </div>
 
+    <!-- Scroll to Top -->
+    <button class="scroll-top-btn" id="scroll-top-btn" aria-label="Прокрутити вгору">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 15-6-6-6 6"/></svg>
+    </button>
+
     <!-- Toast Notification -->
     <div id="toast" class="toast" aria-live="polite">Номер скопійовано ✔️</div>
 
     <!-- Scripts -->
     <script src="config.js" defer></script>
-    <script src="script.js?v=8" defer></script>
+    <script src="script.js?v=10" defer></script>
 </body>
 
 </html>
