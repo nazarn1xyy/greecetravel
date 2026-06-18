@@ -5,7 +5,7 @@ const siteConfig = {
     seatsTotal: "8",
     route: "Україна → Румунія → Болгарія → Греція",
     transport: "Renault Master",
-    departureCity: "Чернівці",
+    departureCity: "Могилів-Подільський",
     departurePlace: "Точне місце виїзду уточнюється перед поїздкою",
     estimatedDuration: "приблизно 24–30 годин дороги",
     price: "уточнюйте у водія",
