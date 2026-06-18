@@ -348,5 +348,40 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // ==========================================
+    // 10. CAROUSEL SWIPE HINT ANIMATION
+    // ==========================================
+    const carousels = document.querySelectorAll('.carousel');
+    
+    if ('IntersectionObserver' in window && carousels.length > 0) {
+        const carouselObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const carousel = entry.target;
+                    // Animate only if the carousel is actually scrollable on this screen
+                    if (carousel.scrollWidth > carousel.clientWidth) {
+                        // Delay slightly so the user notices it after scrolling stops
+                        setTimeout(() => {
+                            carousel.scrollTo({ left: 60, behavior: 'smooth' });
+                            
+                            // Scroll back to start
+                            setTimeout(() => {
+                                carousel.scrollTo({ left: 0, behavior: 'smooth' });
+                            }, 600);
+                        }, 500);
+                    }
+                    // Only do this once per carousel
+                    observer.unobserve(carousel);
+                }
+            });
+        }, {
+            threshold: 0.7 // Trigger when 70% visible
+        });
+
+        carousels.forEach(carousel => {
+            carouselObserver.observe(carousel);
+        });
+    }
+
 });
 
