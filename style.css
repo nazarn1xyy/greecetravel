@@ -1245,7 +1245,7 @@ h4 {
         transform: translateX(0);
     }
     
-    .main-nav a {
+    .main-nav a:not(.btn) {
         font-size: 1.25rem;
         padding: 12px 0;
         border-bottom: 1px solid var(--border-color);
@@ -1337,7 +1337,7 @@ h4 {
     }
     
     .main-nav { display: flex; transform: none; position: static; box-shadow: none; background: transparent; padding: 0; flex-direction: row; height: auto; backdrop-filter: none; justify-content: flex-end; }
-    .main-nav a { font-size: 1rem; padding: 0; border-bottom: none; }
+    .main-nav a:not(.btn) { font-size: 1rem; padding: 0; border-bottom: none; }
     .mobile-menu-btn { display: none; }
     
     .grid-cards {
