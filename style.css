@@ -1407,3 +1407,84 @@ h4 {
         width: 50%;
     }
 }
+
+/* 
+==================================================
+   TRIP SUMMARY BENTO
+================================================== 
+*/
+.summary-wrapper {
+    background: #ffffff;
+    border-radius: var(--radius-lg);
+    padding: 40px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+    border: 1px solid var(--border-color);
+}
+
+.summary-bento {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.bento-item {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    background: var(--surface-color);
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border-color);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.bento-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.06);
+    border-color: var(--primary-color);
+}
+
+.bento-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    background: rgba(14, 116, 212, 0.1);
+    color: var(--primary-color);
+    border-radius: 50%;
+    margin-right: 16px;
+    flex-shrink: 0;
+}
+
+.bento-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.bento-label {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-bottom: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-weight: 600;
+}
+
+.bento-value {
+    font-size: 1.1rem;
+    color: var(--text-color);
+    font-weight: 700;
+}
+
+.route-item {
+    grid-column: 1 / -1;
+}
+
+@media (max-width: 768px) {
+    .summary-wrapper {
+        padding: 24px 16px;
+    }
+    .bento-item {
+        padding: 16px;
+    }
+}

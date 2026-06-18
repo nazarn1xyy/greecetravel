@@ -47,7 +47,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="style.css?v=5">
+    <link rel="stylesheet" href="style.css?v=7">
 </head>
 
 <body>
@@ -108,21 +108,87 @@
     </section>
 
     <!-- 1.5 Short Summary -->
-    <section class="trip-summary" id="summary" style="padding: 32px 0; background: var(--surface-color); border-bottom: 1px solid var(--border-color);">
+    <section class="trip-summary bg-light" id="summary" style="padding: 48px 0;">
         <div class="container">
-            <h2 class="text-center" style="font-size: 1.75rem; margin-bottom: 24px;">Коротко про найближчу поїздку</h2>
-            <div class="summary-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px;">
-                <div class="summary-item"><strong>Дата:</strong> <span id="summary-date">21 червня 2026</span></div>
-                <div class="summary-item"><strong>Виїзд:</strong> <span id="summary-city">Чернівці</span></div>
-                <div class="summary-item"><strong>Місць:</strong> <span id="summary-seats">4 з 8</span></div>
-                <div class="summary-item"><strong>Транспорт:</strong> <span id="summary-transport">Renault Master</span></div>
-                <div class="summary-item"><strong>Маршрут:</strong> <span id="summary-route">Україна → Румунія → Болгарія → Греція</span></div>
-                <div class="summary-item"><strong>Ціна:</strong> <span id="summary-price">уточнюйте у водія</span></div>
-                <div class="summary-item"><strong>Тривалість:</strong> <span id="summary-duration">приблизно 24–30 годин дороги</span></div>
+            <div class="summary-wrapper">
+                <h2 class="text-center" style="margin-bottom: 32px;">Коротко про найближчу поїздку</h2>
+                <div class="summary-bento">
+                    <!-- Date -->
+                    <div class="bento-item">
+                        <div class="bento-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                        </div>
+                        <div class="bento-content">
+                            <span class="bento-label">Дата</span>
+                            <strong class="bento-value" id="summary-date">21 червня 2026</strong>
+                        </div>
+                    </div>
+                    <!-- City -->
+                    <div class="bento-item">
+                        <div class="bento-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                        </div>
+                        <div class="bento-content">
+                            <span class="bento-label">Виїзд</span>
+                            <strong class="bento-value" id="summary-city">Чернівці</strong>
+                        </div>
+                    </div>
+                    <!-- Seats -->
+                    <div class="bento-item">
+                        <div class="bento-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                        </div>
+                        <div class="bento-content">
+                            <span class="bento-label">Місць</span>
+                            <strong class="bento-value" id="summary-seats">4 з 8</strong>
+                        </div>
+                    </div>
+                    <!-- Transport -->
+                    <div class="bento-item">
+                        <div class="bento-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 16H9m10 0h3v-3.15a1 1 0 0 0-.84-.99L16 11l-2.7-3.6a2 2 0 0 0-1.6-.8H5a2 2 0 0 0-2 2v7.4c0 .9.7 1.6 1.6 1.6H5m0 0a2 2 0 1 0 4 0m-4 0a2 2 0 1 1 4 0m9 0a2 2 0 1 0 4 0m-4 0a2 2 0 1 1 4 0"/></svg>
+                        </div>
+                        <div class="bento-content">
+                            <span class="bento-label">Транспорт</span>
+                            <strong class="bento-value" id="summary-transport">Renault Master</strong>
+                        </div>
+                    </div>
+                    <!-- Route -->
+                    <div class="bento-item route-item">
+                        <div class="bento-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="19" r="3"/><path d="M9 19h8.5a3.5 3.5 0 0 0 0-7h-11a3.5 3.5 0 0 1 0-7H15"/><circle cx="18" cy="5" r="3"/></svg>
+                        </div>
+                        <div class="bento-content">
+                            <span class="bento-label">Маршрут</span>
+                            <strong class="bento-value" id="summary-route">Україна → Румунія → Болгарія → Греція</strong>
+                        </div>
+                    </div>
+                    <!-- Duration -->
+                    <div class="bento-item">
+                        <div class="bento-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                        </div>
+                        <div class="bento-content">
+                            <span class="bento-label">Тривалість</span>
+                            <strong class="bento-value" id="summary-duration">приблизно 24–30 годин дороги</strong>
+                        </div>
+                    </div>
+                    <!-- Price -->
+                    <div class="bento-item">
+                        <div class="bento-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="12" cy="12" r="2"/><path d="M6 12h.01M18 12h.01"/></svg>
+                        </div>
+                        <div class="bento-content">
+                            <span class="bento-label">Ціна</span>
+                            <strong class="bento-value" id="summary-price">уточнюйте у водія</strong>
+                        </div>
+                    </div>
+                </div>
+                
+                <p class="text-center text-muted" style="margin-top: 24px; font-size: 0.9rem;">
+                    <em>Примітка: <span id="summary-notes">дату, маршрут, ціну і кількість місць уточнюйте у водія.</span></em>
+                </p>
             </div>
-            <p class="text-center text-muted" style="margin-top: 24px; font-size: 0.9rem;">
-                <em>Примітка: <span id="summary-notes">дату, маршрут, ціну і кількість місць уточнюйте у водія.</span></em>
-            </p>
         </div>
     </section>
     <!-- NEW: Benefits Section -->
