@@ -930,6 +930,9 @@ h4 {
 ================================================== 
 */
 @media (max-width: 767px) {
+    .hero-actions {
+        display: none !important;
+    }
     .main-nav {
         position: absolute;
         top: 64px; /* header height */
