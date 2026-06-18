@@ -529,17 +529,32 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // ==========================================
-    // 12. SCROLL TO TOP BUTTON
+    // 12. SCROLL TO TOP BUTTON + HEADER SCROLL
     // ==========================================
     const scrollTopBtn = document.getElementById('scroll-top-btn');
-    if (scrollTopBtn) {
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 600) {
+    const header = document.querySelector('.header');
+
+    window.addEventListener('scroll', () => {
+        const y = window.scrollY;
+
+        // Header: transparent → solid
+        if (header) {
+            if (y > 80) {
+                header.classList.add('header-scrolled');
+            } else {
+                header.classList.remove('header-scrolled');
+            }
+        }
+
+        // Scroll-to-top button
+        if (scrollTopBtn) {
+            if (y > 600) {
                 scrollTopBtn.classList.add('visible');
             } else {
                 scrollTopBtn.classList.remove('visible');
             }
-        }, { passive: true });
+        }
+    }, { passive: true });
 
         scrollTopBtn.addEventListener('click', () => {
             window.scrollTo({ top: 0, behavior: 'smooth' });
