@@ -231,6 +231,58 @@
     <section class="route bg-light" id="route">
         <div class="container">
             <h2 class="text-center">Маршрут</h2>
+            
+            <!-- MOCK MAP -->
+            <div class="mock-map-wrapper" style="max-width: 400px; margin: 0 auto 32px; background: white; border-radius: var(--radius-lg); padding: 32px 16px 24px; box-shadow: var(--shadow-sm); border: 1px solid var(--border-color);">
+                <svg viewBox="0 0 300 400" width="100%" height="400" xmlns="http://www.w3.org/2000/svg" style="font-family: 'Inter', sans-serif;">
+                    <defs>
+                        <linearGradient id="routeGrad" x1="0" y1="0" x2="0" y2="1">
+                            <stop offset="0%" stop-color="var(--primary-color)" />
+                            <stop offset="100%" stop-color="var(--accent-color)" />
+                        </linearGradient>
+                        <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+                            <feDropShadow dx="0" dy="4" stdDeviation="4" flood-opacity="0.1"/>
+                        </filter>
+                    </defs>
+
+                    <!-- Route Line -->
+                    <path d="M 50,40 C 50,100 250,90 250,150 C 250,210 50,200 50,260 C 50,320 250,310 250,370" fill="none" stroke="url(#routeGrad)" stroke-width="4" stroke-dasharray="8 8" stroke-linecap="round" />
+                    
+                    <!-- Chernivtsi -->
+                    <circle cx="50" cy="40" r="12" fill="white" stroke="var(--primary-color)" stroke-width="4" filter="url(#shadow)" />
+                    <circle cx="50" cy="40" r="4" fill="var(--primary-color)" />
+                    <text x="75" y="36" font-size="16" font-weight="700" fill="var(--text-main)">Чернівці</text>
+                    <text x="75" y="54" font-size="12" fill="var(--text-muted)">Україна (Старт)</text>
+
+                    <!-- Romania -->
+                    <circle cx="250" cy="150" r="8" fill="white" stroke="var(--primary-color)" stroke-width="3" filter="url(#shadow)" />
+                    <text x="230" y="146" text-anchor="end" font-size="16" font-weight="700" fill="var(--text-main)">Румунія</text>
+                    <text x="230" y="164" text-anchor="end" font-size="12" fill="var(--text-muted)">Транзит</text>
+
+                    <!-- Bulgaria -->
+                    <circle cx="50" cy="260" r="8" fill="white" stroke="var(--primary-color)" stroke-width="3" filter="url(#shadow)" />
+                    <text x="75" y="256" font-size="16" font-weight="700" fill="var(--text-main)">Болгарія</text>
+                    <text x="75" y="274" font-size="12" fill="var(--text-muted)">Транзит</text>
+
+                    <!-- Greece -->
+                    <circle cx="250" cy="370" r="14" fill="white" stroke="var(--accent-color)" stroke-width="4" filter="url(#shadow)" />
+                    <circle cx="250" cy="370" r="6" fill="var(--accent-color)" />
+                    <text x="225" y="366" text-anchor="end" font-size="16" font-weight="700" fill="var(--text-main)">Свята Греція</text>
+                    <text x="225" y="384" text-anchor="end" font-size="12" fill="var(--text-muted)">Монастирі та святині</text>
+
+                    <!-- Bus Icon -->
+                    <g transform="translate(138, 193)">
+                        <rect width="24" height="24" rx="12" fill="white" stroke="var(--primary-color)" stroke-width="2" filter="url(#shadow)"/>
+                        <svg x="4" y="4" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--primary-color)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"/>
+                            <circle cx="7" cy="17" r="2"/>
+                            <path d="M9 17h6"/>
+                            <circle cx="17" cy="17" r="2"/>
+                        </svg>
+                    </g>
+                </svg>
+            </div>
+
             <div class="route-accordion-wrapper" id="route-accordion-wrapper">
                 <div class="route-steps collapsed" id="route-steps">
                     <div class="route-gradient" id="route-gradient"></div>
