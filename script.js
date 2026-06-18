@@ -295,4 +295,58 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // ==========================================
+    // 8. TABS LOGIC
+    // ==========================================
+    const tabBtns = document.querySelectorAll('.tab-btn');
+    const tabContents = document.querySelectorAll('.tab-content');
+
+    tabBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const target = btn.getAttribute('data-tab');
+            
+            // Remove active from all
+            tabBtns.forEach(b => b.classList.remove('active'));
+            tabContents.forEach(c => c.classList.remove('active'));
+            
+            // Add active to current
+            btn.classList.add('active');
+            const targetElement = document.getElementById(target);
+            if (targetElement) {
+                targetElement.classList.add('active');
+            }
+        });
+    });
+
+    // ==========================================
+    // 9. ROUTE ACCORDION
+    // ==========================================
+    const routeBtn = document.getElementById('route-toggle-btn');
+    const routeSteps = document.getElementById('route-steps');
+    
+    // Only show button if route is tall enough on mobile/desktop
+    if (routeBtn && routeSteps) {
+        // If content height is > 350px, it needs an accordion
+        if (routeSteps.scrollHeight > 350) {
+            routeBtn.style.display = 'block';
+        }
+        
+        routeBtn.addEventListener('click', () => {
+            if (routeSteps.classList.contains('collapsed')) {
+                routeSteps.classList.remove('collapsed');
+                routeSteps.style.maxHeight = routeSteps.scrollHeight + 'px';
+                routeBtn.textContent = 'Приховати маршрут';
+            } else {
+                routeSteps.classList.add('collapsed');
+                routeSteps.style.maxHeight = ''; // falls back to css 320px
+                routeBtn.textContent = 'Показати весь маршрут';
+                
+                // Scroll slightly up so user doesn't lose context
+                const offset = routeSteps.getBoundingClientRect().top + window.scrollY - 100;
+                window.scrollTo({ top: offset, behavior: 'smooth' });
+            }
+        });
+    }
+
 });
+
