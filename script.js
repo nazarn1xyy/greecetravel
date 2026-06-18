@@ -1,4 +1,23 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // Inject Schema.org JSON-LD
+    const schemaScript = document.createElement('script');
+    schemaScript.type = 'application/ld+json';
+    schemaScript.text = JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "TravelAgency",
+        "name": "GreeceTravel",
+        "description": "Комфортні паломницькі поїздки до святих місць Греції з Могилева-Подільського на Renault Master.",
+        "url": "https://greecetravel.vercel.app/",
+        "image": "https://greecetravel.vercel.app/assets/og-image.jpg",
+        "telephone": typeof siteConfig !== 'undefined' ? siteConfig.phoneLink : "+38000000000",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": typeof siteConfig !== 'undefined' ? siteConfig.departureCity : "Могилів-Подільський",
+            "addressCountry": "UA"
+        }
+    });
+    document.head.appendChild(schemaScript);
+
     // ==========================================
     // 1. DATA BINDING FROM CONFIG.JS
     // ==========================================
@@ -62,30 +81,36 @@ document.addEventListener('DOMContentLoaded', () => {
         updateElementText('contact-time', siteConfig.callTime);
 
         // Contact Links (Hide if empty)
+        const isValidLink = (link) => link && link.trim() !== '' && !link.includes('username');
+        const isValidPhone = siteConfig.phoneLink && siteConfig.phoneLink.trim() !== '';
+        
         updateElementLink('contact-phone-display', siteConfig.phoneLink, 'tel:');
         updateElementLink('btn-phone', siteConfig.phoneLink, 'tel:');
         
-        // Update all messenger buttons by class
+        const hasViber = isValidLink(siteConfig.viberLink);
+        const hasTg = isValidLink(siteConfig.telegramLink);
+        const hasWa = isValidLink(siteConfig.whatsappLink);
+
         document.querySelectorAll('.viber-btn').forEach(btn => {
-            if(siteConfig.viberLink) btn.href = siteConfig.viberLink;
-            else btn.style.display = 'none';
+            if(hasViber) { btn.href = siteConfig.viberLink; btn.style.display = ''; } else { btn.style.display = 'none'; }
         });
         document.querySelectorAll('.tg-btn').forEach(btn => {
-            if(siteConfig.telegramLink) btn.href = siteConfig.telegramLink;
-            else btn.style.display = 'none';
+            if(hasTg) { btn.href = siteConfig.telegramLink; btn.style.display = ''; } else { btn.style.display = 'none'; }
         });
         document.querySelectorAll('.wa-btn').forEach(btn => {
-            if(siteConfig.whatsappLink) btn.href = siteConfig.whatsappLink;
-            else btn.style.display = 'none';
+            if(hasWa) { btn.href = siteConfig.whatsappLink; btn.style.display = ''; } else { btn.style.display = 'none'; }
         });
 
         // Mobile Bar Links
         updateElementLink('mobile-btn-phone', siteConfig.phoneLink, 'tel:');
+        if (!isValidPhone) {
+            const btnPhone = document.getElementById('mobile-btn-phone');
+            if (btnPhone) btnPhone.style.display = 'none';
+        }
         
-        // If all messengers are empty, hide the "Write" button
-        if (!siteConfig.viberLink && !siteConfig.telegramLink && !siteConfig.whatsappLink) {
-            const btnWrite = document.getElementById('mobile-btn-write');
-            if (btnWrite) btnWrite.style.display = 'none';
+        if (!hasViber && !hasTg && !hasWa) {
+            const noMsg = document.getElementById('sheet-no-messengers');
+            if (noMsg) noMsg.style.display = 'block';
         }
     }
 
@@ -171,6 +196,13 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     if (openSheetBtn) openSheetBtn.addEventListener('click', (e) => { e.preventDefault(); openBottomSheet(); });
+    
+    document.querySelectorAll('.open-messenger-modal').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            openBottomSheet();
+        });
+    });
     if (closeSheetBtn) closeSheetBtn.addEventListener('click', closeBottomSheet);
     
     if (contactSheet) {
@@ -178,6 +210,64 @@ document.addEventListener('DOMContentLoaded', () => {
             if (e.target === contactSheet) closeBottomSheet();
         });
     }
+
+    // Countdown Timer Logic
+    function initCountdown() {
+        const timerEl = document.getElementById('countdown-timer');
+        if (!timerEl || !siteConfig.tripDate) return;
+        
+        // Parse Ukrainian date like "21 червня 2026"
+        const months = {
+            'січня': 0, 'лютого': 1, 'березня': 2, 'квітня': 3, 'травня': 4, 'червня': 5,
+            'липня': 6, 'серпня': 7, 'вересня': 8, 'жовтня': 9, 'листопада': 10, 'грудня': 11
+        };
+        
+        const dateParts = siteConfig.tripDate.toLowerCase().split(' ');
+        if (dateParts.length < 3) return;
+        
+        const day = parseInt(dateParts[0]);
+        const month = months[dateParts[1]];
+        const year = parseInt(dateParts[2]);
+        
+        if (isNaN(day) || month === undefined || isNaN(year)) return;
+        
+        const targetDate = new Date(year, month, day, 6, 0, 0).getTime(); // assume 06:00 AM departure
+        
+        function updateTimer() {
+            const now = new Date().getTime();
+            const distance = targetDate - now;
+            
+            if (distance < 0) {
+                timerEl.style.display = 'none';
+                return;
+            }
+            
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            
+            timerEl.innerHTML = `
+                <div class="countdown-item">
+                    <span class="countdown-value">${days}</span>
+                    <span class="countdown-label">Днів</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-value">${hours}</span>
+                    <span class="countdown-label">Годин</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-value">${minutes}</span>
+                    <span class="countdown-label">Хвилин</span>
+                </div>
+            `;
+            timerEl.style.display = 'inline-flex';
+        }
+        
+        updateTimer();
+        setInterval(updateTimer, 60000); // update every minute
+    }
+    
+    initCountdown();
 
     // ==========================================
     // 5. MODALS (Legal pages)
@@ -243,12 +333,13 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-
     document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape') {
+            closeBottomSheet();
             closeModal();
         }
     });
+
 
     // ==========================================
     // 6. COPY PHONE & TOAST
@@ -278,13 +369,13 @@ document.addEventListener('DOMContentLoaded', () => {
     // ==========================================
     const carouselContainers = document.querySelectorAll('.carousel-container');
     carouselContainers.forEach(container => {
-        const carousel = container.querySelector('.carousel');
+        const carousel = container.querySelector('.carousel') || container.querySelector('.scrollable-cards');
         const prevBtn = container.querySelector('.prev-btn');
         const nextBtn = container.querySelector('.next-btn');
 
         if (carousel && prevBtn && nextBtn) {
             const getScrollAmount = () => {
-                const item = carousel.querySelector('.carousel-item');
+                const item = carousel.querySelector('.carousel-item') || carousel.querySelector('.step-card');
                 return item ? item.offsetWidth + 20 : 300;
             };
 
