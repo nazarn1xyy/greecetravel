@@ -276,24 +276,27 @@ document.addEventListener('DOMContentLoaded', () => {
     // ==========================================
     // 7. CAROUSEL SCROLL LOGIC
     // ==========================================
-    const sightsCarousel = document.getElementById('sights-carousel');
-    const sightsPrev = document.getElementById('sights-prev');
-    const sightsNext = document.getElementById('sights-next');
+    const carouselContainers = document.querySelectorAll('.carousel-container');
+    carouselContainers.forEach(container => {
+        const carousel = container.querySelector('.carousel');
+        const prevBtn = container.querySelector('.prev-btn');
+        const nextBtn = container.querySelector('.next-btn');
 
-    if (sightsCarousel && sightsPrev && sightsNext) {
-        const getScrollAmount = () => {
-            const item = sightsCarousel.querySelector('.carousel-item');
-            return item ? item.offsetWidth + 20 : 300;
-        };
+        if (carousel && prevBtn && nextBtn) {
+            const getScrollAmount = () => {
+                const item = carousel.querySelector('.carousel-item');
+                return item ? item.offsetWidth + 20 : 300;
+            };
 
-        sightsPrev.addEventListener('click', () => {
-            sightsCarousel.scrollBy({ left: -getScrollAmount(), behavior: 'smooth' });
-        });
+            prevBtn.addEventListener('click', () => {
+                carousel.scrollBy({ left: -getScrollAmount(), behavior: 'smooth' });
+            });
 
-        sightsNext.addEventListener('click', () => {
-            sightsCarousel.scrollBy({ left: getScrollAmount(), behavior: 'smooth' });
-        });
-    }
+            nextBtn.addEventListener('click', () => {
+                carousel.scrollBy({ left: getScrollAmount(), behavior: 'smooth' });
+            });
+        }
+    });
 
     // ==========================================
     // 8. TABS LOGIC
