@@ -1,6 +1,10 @@
 {
   "cleanUrls": true,
   "trailingSlash": false,
+  "routes": [
+    { "src": "/\\.agent(/.*)?", "status": 404 },
+    { "handle": "filesystem" }
+  ],
   "headers": [
     {
       "source": "/(.*)",

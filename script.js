@@ -1,22 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Inject Schema.org JSON-LD
-    const schemaScript = document.createElement('script');
-    schemaScript.type = 'application/ld+json';
-    schemaScript.text = JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "TravelAgency",
-        "name": "GreeceTravel",
-        "description": "Комфортні паломницькі поїздки до святих місць Греції з Могилева-Подільського на Renault Master.",
-        "url": "https://greecetravel.vercel.app/",
-        "image": "https://greecetravel.vercel.app/assets/og-image.jpg",
-        "telephone": typeof siteConfig !== 'undefined' ? siteConfig.phoneLink : "+38000000000",
-        "address": {
-            "@type": "PostalAddress",
-            "addressLocality": typeof siteConfig !== 'undefined' ? siteConfig.departureCity : "Могилів-Подільський",
-            "addressCountry": "UA"
-        }
-    });
-    document.head.appendChild(schemaScript);
 
     // ==========================================
     // 1. DATA BINDING FROM CONFIG.JS
@@ -56,12 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
         updateElementText('summary-duration', siteConfig.estimatedDuration);
         updateElementText('summary-notes', siteConfig.tripNotes);
 
-        // Next Trip
-        updateElementText('trip-date', siteConfig.tripDate);
-        updateElementText('trip-seats', siteConfig.seatsAvailable);
-        updateElementText('trip-seats-total', siteConfig.seatsTotal);
-        updateElementText('trip-transport', siteConfig.transport);
-        updateElementText('trip-route', siteConfig.route);
+
 
         // Transport Info
         updateElementText('transport-name', siteConfig.transport);
@@ -246,20 +223,29 @@ document.addEventListener('DOMContentLoaded', () => {
             const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
             const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
             
-            timerEl.innerHTML = `
-                <div class="countdown-item">
-                    <span class="countdown-value">${days}</span>
-                    <span class="countdown-label">Днів</span>
-                </div>
-                <div class="countdown-item">
-                    <span class="countdown-value">${hours}</span>
-                    <span class="countdown-label">Годин</span>
-                </div>
-                <div class="countdown-item">
-                    <span class="countdown-value">${minutes}</span>
-                    <span class="countdown-label">Хвилин</span>
-                </div>
-            `;
+            timerEl.textContent = ''; // clear previous content
+            
+            const createItem = (value, label) => {
+                const itemDiv = document.createElement('div');
+                itemDiv.className = 'countdown-item';
+                
+                const valSpan = document.createElement('span');
+                valSpan.className = 'countdown-value';
+                valSpan.textContent = value;
+                
+                const labelSpan = document.createElement('span');
+                labelSpan.className = 'countdown-label';
+                labelSpan.textContent = label;
+                
+                itemDiv.appendChild(valSpan);
+                itemDiv.appendChild(labelSpan);
+                return itemDiv;
+            };
+
+            timerEl.appendChild(createItem(days, 'Днів'));
+            timerEl.appendChild(createItem(hours, 'Годин'));
+            timerEl.appendChild(createItem(minutes, 'Хвилин'));
+            
             timerEl.style.display = 'inline-flex';
         }
         
@@ -373,19 +359,47 @@ document.addEventListener('DOMContentLoaded', () => {
         const prevBtn = container.querySelector('.prev-btn');
         const nextBtn = container.querySelector('.next-btn');
 
-        if (carousel && prevBtn && nextBtn) {
+        if (carousel) {
             const getScrollAmount = () => {
                 const item = carousel.querySelector('.carousel-item') || carousel.querySelector('.step-card');
                 return item ? item.offsetWidth + 20 : 300;
             };
 
-            prevBtn.addEventListener('click', () => {
-                carousel.scrollBy({ left: -getScrollAmount(), behavior: 'smooth' });
+            if (prevBtn && nextBtn) {
+                prevBtn.addEventListener('click', () => carousel.scrollBy({ left: -getScrollAmount(), behavior: 'smooth' }));
+                nextBtn.addEventListener('click', () => carousel.scrollBy({ left: getScrollAmount(), behavior: 'smooth' }));
+            }
+
+            // Keyboard navigation
+            carousel.setAttribute('tabindex', '0');
+            carousel.addEventListener('keydown', (e) => {
+                if (e.key === 'ArrowLeft') carousel.scrollBy({ left: -getScrollAmount(), behavior: 'smooth' });
+                else if (e.key === 'ArrowRight') carousel.scrollBy({ left: getScrollAmount(), behavior: 'smooth' });
             });
 
-            nextBtn.addEventListener('click', () => {
-                carousel.scrollBy({ left: getScrollAmount(), behavior: 'smooth' });
-            });
+            // Pagination Dots
+            const dotsContainer = container.querySelector('.carousel-dots');
+            if (dotsContainer) {
+                const items = carousel.querySelectorAll('.carousel-item');
+                items.forEach((_, i) => {
+                    const dot = document.createElement('button');
+                    dot.className = i === 0 ? 'dot active' : 'dot';
+                    dot.setAttribute('aria-label', `Slide ${i + 1}`);
+                    dot.addEventListener('click', () => {
+                        carousel.scrollTo({ left: i * getScrollAmount(), behavior: 'smooth' });
+                    });
+                    dotsContainer.appendChild(dot);
+                });
+
+                // Update active dot on scroll
+                carousel.addEventListener('scroll', () => {
+                    const index = Math.round(carousel.scrollLeft / getScrollAmount());
+                    const dots = dotsContainer.querySelectorAll('.dot');
+                    dots.forEach((dot, i) => {
+                        dot.classList.toggle('active', i === index);
+                    });
+                });
+            }
         }
     });
 
