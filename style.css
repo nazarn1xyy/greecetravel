@@ -21,9 +21,9 @@
     --line-height: 1.5;
     
     /* Layout */
-    --radius-sm: 8px;
-    --radius-md: 16px;
-    --radius-lg: 24px;
+    --radius-sm: 12px;
+    --radius-md: 24px;
+    --radius-lg: 40px;
     --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.04);
     --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.06);
     --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.1);
@@ -168,7 +168,7 @@ h4 {
     justify-content: center;
     gap: 8px;
     padding: 12px 24px;
-    border-radius: var(--radius-sm);
+    border-radius: 100px;
     font-weight: 600;
     font-size: 1rem;
     cursor: pointer;
@@ -1389,7 +1389,7 @@ h4 {
     gap: 16px;
     background: var(--surface-color);
     padding: 16px 24px;
-    border-radius: var(--radius-lg);
+    border-radius: 100px;
     box-shadow: var(--shadow-sm);
     border: 1px solid var(--border-color);
     margin-top: 16px;
