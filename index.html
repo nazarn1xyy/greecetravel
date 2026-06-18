@@ -47,7 +47,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="style.css?v=8">
+    <link rel="stylesheet" href="style.css?v=9">
 </head>
 
 <body>
@@ -269,31 +269,39 @@
             <h2 class="text-center">Святі місця</h2>
             <p class="section-description text-center mx-auto">Учасники поїздки матимуть можливість відвідати монастирі,
                 храми, святині та духовні місця Греції.</p>
-            <div class="grid-cards mt-4">
-                <div class="card card-with-image">
-                    <div class="img-wrapper">
-                        <img src="assets/monastery.png" alt="Монастирі Греції" width="400" height="220" loading="lazy">
+            <div class="carousel-container mt-4">
+                <button class="carousel-btn prev-btn" aria-label="Попередня картинка" id="sights-prev">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+                </button>
+                <div class="carousel" id="sights-carousel">
+                    <div class="carousel-item card-with-image">
+                        <div class="img-wrapper">
+                            <img src="assets/monastery.png" alt="Монастирі Греції" width="400" height="220" loading="lazy">
+                        </div>
+                        <div class="card-content">
+                            <h3>Монастирі Греції</h3>
+                        </div>
                     </div>
-                    <div class="card-content">
-                        <h3>Монастирі Греції</h3>
+                    <div class="carousel-item card-with-image">
+                        <div class="img-wrapper">
+                            <img src="assets/temple.png" alt="Храми Греції" width="400" height="220" loading="lazy">
+                        </div>
+                        <div class="card-content">
+                            <h3>Храми</h3>
+                        </div>
+                    </div>
+                    <div class="carousel-item card-with-image">
+                        <div class="img-wrapper">
+                            <img src="assets/shrine.png" alt="Святині та місця для молитви" width="400" height="220" loading="lazy">
+                        </div>
+                        <div class="card-content">
+                            <h3>Святині та місця для молитви</h3>
+                        </div>
                     </div>
                 </div>
-                <div class="card card-with-image">
-                    <div class="img-wrapper">
-                        <img src="assets/temple.png" alt="Храми Греції" width="400" height="220" loading="lazy">
-                    </div>
-                    <div class="card-content">
-                        <h3>Храми</h3>
-                    </div>
-                </div>
-                <div class="card card-with-image">
-                    <div class="img-wrapper">
-                        <img src="assets/shrine.png" alt="Святині та місця для молитви" width="400" height="220" loading="lazy">
-                    </div>
-                    <div class="card-content">
-                        <h3>Святині та місця для молитви</h3>
-                    </div>
-                </div>
+                <button class="carousel-btn next-btn" aria-label="Наступна картинка" id="sights-next">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+                </button>
             </div>
         </div>
     </section>
@@ -821,7 +829,7 @@
 
     <!-- Scripts -->
     <script src="config.js"></script>
-    <script src="script.js"></script>
+    <script src="script.js?v=5"></script>
 </body>
 
 </html>

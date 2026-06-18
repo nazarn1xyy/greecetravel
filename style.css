@@ -1489,3 +1489,106 @@ h4 {
         padding: 16px;
     }
 }
+
+/* 
+==================================================
+   CAROUSEL
+================================================== 
+*/
+.carousel-container {
+    position: relative;
+    width: 100%;
+    margin-top: 32px;
+    padding: 0 40px;
+}
+
+.carousel {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 20px;
+    padding-bottom: 24px;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none;  /* IE and Edge */
+    scroll-behavior: smooth;
+}
+
+.carousel::-webkit-scrollbar {
+    display: none;
+}
+
+.carousel-item {
+    flex: 0 0 100%;
+    scroll-snap-align: center;
+    background: white;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-sm);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+@media (min-width: 600px) {
+    .carousel-item {
+        flex: 0 0 calc(50% - 10px);
+    }
+}
+
+@media (min-width: 900px) {
+    .carousel-item {
+        flex: 0 0 calc(33.333% - 14px);
+    }
+}
+
+.carousel-btn {
+    position: absolute;
+    top: calc(50% - 24px); /* centered vertically minus padding-bottom */
+    transform: translateY(-50%);
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: white;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary-color);
+    cursor: pointer;
+    z-index: 10;
+    transition: background 0.2s, transform 0.2s;
+}
+
+.carousel-btn:hover {
+    background: var(--surface-color);
+    transform: translateY(-50%) scale(1.05);
+}
+
+.carousel-btn:active {
+    transform: translateY(-50%) scale(0.95);
+}
+
+.prev-btn {
+    left: 0;
+}
+
+.next-btn {
+    right: 0;
+}
+
+@media (max-width: 600px) {
+    .carousel-container {
+        padding: 0 16px;
+    }
+    .carousel-btn {
+        width: 40px;
+        height: 40px;
+    }
+    .prev-btn {
+        left: -8px;
+    }
+    .next-btn {
+        right: -8px;
+    }
+}

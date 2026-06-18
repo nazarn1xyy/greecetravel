@@ -273,5 +273,26 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // ==========================================
+    // 7. CAROUSEL SCROLL LOGIC
+    // ==========================================
+    const sightsCarousel = document.getElementById('sights-carousel');
+    const sightsPrev = document.getElementById('sights-prev');
+    const sightsNext = document.getElementById('sights-next');
+
+    if (sightsCarousel && sightsPrev && sightsNext) {
+        const getScrollAmount = () => {
+            const item = sightsCarousel.querySelector('.carousel-item');
+            return item ? item.offsetWidth + 20 : 300;
+        };
+
+        sightsPrev.addEventListener('click', () => {
+            sightsCarousel.scrollBy({ left: -getScrollAmount(), behavior: 'smooth' });
+        });
+
+        sightsNext.addEventListener('click', () => {
+            sightsCarousel.scrollBy({ left: getScrollAmount(), behavior: 'smooth' });
+        });
+    }
 
 });
