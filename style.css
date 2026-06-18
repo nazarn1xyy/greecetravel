@@ -1577,6 +1577,12 @@ h4 {
     right: 0;
 }
 
+@media (min-width: 900px) {
+    .carousel-btn {
+        display: none;
+    }
+}
+
 @media (max-width: 600px) {
     .carousel-container {
         padding: 0 16px;
