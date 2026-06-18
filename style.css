@@ -1598,3 +1598,66 @@ h4 {
         right: -8px;
     }
 }
+
+/* 
+==================================================
+   MOBILE COMPACTNESS OPTIMIZATIONS
+================================================== 
+*/
+@media (max-width: 768px) {
+    /* Reduce padding between sections */
+    section {
+        padding: 40px 0 !important;
+    }
+    
+    /* Reduce large headings */
+    h1 {
+        font-size: 2rem !important; /* 32px */
+    }
+    h2 {
+        font-size: 1.625rem !important; /* 26px */
+        margin-bottom: 24px !important;
+    }
+    
+    /* Compact the hero section padding & gaps */
+    .hero {
+        padding: 40px 0 !important;
+    }
+    .hero-badges {
+        gap: 8px !important;
+    }
+    
+    /* Compact route and feature lists */
+    .steps-container, .info-grid, .included-grid {
+        gap: 16px !important;
+    }
+    .check-list, .cross-list {
+        padding: 16px !important;
+        gap: 12px !important;
+    }
+    .check-list li, .cross-list li {
+        font-size: 0.95rem !important;
+    }
+    
+    /* Compact Bento cards further */
+    .summary-wrapper {
+        padding: 16px 12px !important;
+    }
+    .bento-item {
+        padding: 12px !important;
+    }
+    .bento-icon {
+        width: 40px !important;
+        height: 40px !important;
+        margin-right: 12px !important;
+    }
+    .bento-value {
+        font-size: 1rem !important;
+    }
+    
+    /* Section description margins */
+    .section-description {
+        font-size: 1rem !important;
+        margin-bottom: 24px !important;
+    }
+}
